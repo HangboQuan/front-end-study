@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS样式</title>
+    <style>
+        /* 选择器{样式} 给谁改样式 */
+        p {
+            color: red;
+            /* 默认字体是16px */
+            font-size: 19px;
+            /* font-family: 'Microsoft YaHei'; */
+            font-family: "宋体";
+            /* font-weight: bold; 等价于下面数字*/
+            font-weight: 700;
+            font-style: italic;
+
+            /* 通常用于段落首行缩进 */
+            /* text-indent: 32px; */
+            text-indent: 2em;
+
+            /* 行间距 = 上间距 + 文本高度 + 下间距 */
+            line-height: 80px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        h4 {
+            /* 盒子里面的文字 对齐 */
+            text-align: center;
+            /* text-decoration: underline;
+            text-decoration: overline; */
+            text-decoration: line-through;
+        }
+
+        /* 让倾斜的字帖不再倾斜 */
+        em {
+            font-style: normal;
+        }
+
+        /* 复合属性 注意不能变 */
+        p {
+            /* font: font-style font-weight font-size/line-height font-family */
+            /* 必须保留font-size 和 font-family 否则不生效; */
+            /* font: italic 700 16px 'Microsoft YaHei'; */
+        }
+
+        .red {
+            color: blueviolet;
+        }
+
+        /* 支持多类名 目的是代码复用 */
+        .red-color {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        .green-color {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+
+        #pink-color {
+            color: pink;
+        }
+
+        /* * {
+            color: gray;
+        } */
+
+        /* 选择器分为基础选择器和复合选择器
+            基础选择器 由单个选择器组成 标签选择器(选择html标签) 类选择器 id选择器 通配符选择器
+            id选择器和类选择器的qubie
+            1. 调用次数： 类选择器 能被调用多次(类型于可以重名) id选择器 只能被调用一次(身份证号) 目前从效果上看id选择器也可以重复使用，但是在和js一同使用的时候 可能出现报错
+            2. 类选择器在修改样式应用居多 id选择器一般用于页面唯一性的元素上经常和js一同使用
+
+            通配符选择器 *用于选取页面中的所有元素(标签) 通配符并不需要被调用自动就添加了样式 一般多用于特殊情况
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+        */
+
+        /* css引入方式 
+            1. 内部样式表 放在style标签中
+            2. 行内样式表 行内直接写style="color: red; font-size: 12px;" 适合修改简单的样式
+            3. 外部样式表 样式单独写在css文件中 再引入进html
+        */
+    </style>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <!--样式层叠表 选择器+多条声明-->
+    <p>有点意思，肯·汤普逊在美国的新奥尔良出生。有人曾问他如何学会了编程，他表示自己只是因为对逻辑着迷。1980年，汤普逊当选美国国家工程院院士，因为“设计了Unix操作系统，它的效率、广度、力量和风格指导了一代在小型计算机进行开发的人。
+    </p>
+    <em>你在教我做事</em>
+    <h4>居中对齐的文本</h4>
+    <h5>好好学习</h5>
+    <ul>
+        <li class="red">鸡汤来喽</li>
+        <li class="red">故意找茬的郝哥</li>
+        <li>是故意还是不小心</li>
+    </ul>
+    <div class="red-color">红色</div>
+    <div class="green-color">绿色</div>
+    <div class="red-color">红色</div>
+
+    <div id="pink-color">dennis ritchie</div>
+    <div id="pink-color">ken thompson</div>
+    <a href="https:www.google.com">google.com</a>
+
+
+</body>
+
+</html>

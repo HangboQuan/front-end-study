@@ -1,0 +1,23 @@
+h3 {
+    font-size: 40px;
+    text-align: center;
+}
+
+.nav {
+    text-align: center;
+    font-size: 12px;
+    color: gray;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 20px;
+    text-indent: 2em;
+}
+
+.hot-pic {
+    text-align: center;
+}
