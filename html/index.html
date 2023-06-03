@@ -10,9 +10,11 @@
 
 <body>
     <!-- 常用的html骨架结构 
-        1. 标题标签 h1-h6
-        2. 段落标签 p 
-        3. div和span div独占一行 
+        1. 标题标签 h1-h6 特点：加了标题的文字会变的加粗，字号也以此减小，一个标题独占一行
+        2. 段落标签 p(paragraph) 特点: 文本在一个短路中会根据浏览器窗口的大小自动换行，段落和段落之间保有空隙
+        3. div(division 分割分区)和span(跨度、跨距) div独占一行 大盒子 span小盒子 
+        4. br 单标签(break) 强制换行 特点：是单标签，开启下一个行，和p标签不一样，段落之间会插入垂直的间距
+        5. em 倾斜 del 删除 ins 下划线
 
     -->
     <h1>这是一个主题</h1>
@@ -40,7 +42,7 @@
     <img src="images/Tom.jpg" alt="图像显示不出来的时候用文字替换" title="鼠标放上去文字展示">
     <!--width和height可以调整宽度和高度，只需调整一个即可，才是等比例缩放-->
     <img src="images/Tom.jpg" alt="TOM猫" width="100" border="5">
-    <a href="https://www.google.com">google一下</a>
+    <a href="https://www.google.com" target="_blank">google一下</a>
     <a href="https://www.baidu.com"><img src="images/Tom.jpg" alt=""></a><br>
 
 
@@ -78,6 +80,287 @@
     <p>“他是虔诚而纯粹的计算机天才，侵犯他人电脑是绝不干的。”潘嘉杰说。
         麻省理工大学计算机系的马丁教授评价说：如果说，乔布斯是可视化产品中的国王，那么里奇就是不可见王国中的君主。乔布斯的贡献在于，他如此了解用户的需求和渴求，以至于创造出了让当代人乐不思蜀的科技产品。然而，却是里奇先生为这些产品提供了最核心的部件，人们看不到这些部件，却每天都在使用着。
         克尼汉评价道：牛顿说他是站在巨人的肩膀上，如今，我们都站在里奇的肩膀上。</p>
+
+    <!--align位置 border边框 cellpadding单元格内文字和单元格的间距 cellspacing单元格和单元格之间的间距-->
+    <table align="center" border="1" cellpadding="0" cellspacing="0" width="500" height="200">
+        <!-- <tr>
+            <td>姓名</td>
+            <td>性别</td>
+            <td>年龄</td>
+        </tr> -->
+        <tr>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>年龄</th>
+        </tr>
+        <tr>
+            <td>quanhangbo</td>
+            <td>男</td>
+            <td>24</td>
+        </tr>
+        <tr>
+            <td>qinzhuo</td>
+            <td>女</td>
+            <td>28</td>
+        </tr>
+        <tr>
+            <td>huangxiuyu</td>
+            <td>女</td>
+            <td>26</td>
+        </tr>
+    </table>
+
+    <table align="center" border="1" cellspacing="0" width="400">
+        <!--
+            thead和tbody都是放在table标签中
+            thead用于定义表格头部 thead必须拥有tr标签
+            tbody用于定义表格主体 用于放数据本体
+        -->
+        <thead>
+            <tr>
+                <th>排名</th>
+                <th>关键词</th>
+                <th>趋势</th>
+                <th>今日搜索</th>
+                <th>最近七日</th>
+                <th>相关链接</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>动物庄园</td>
+                <td><img src="images/up.jpg" alt="动物庄园"></td>
+                <td>19098</td>
+                <td>8976863</td>
+                <td><a href="#">百科</a>&nbsp;<a href="#">地图</a></td>
+            </tr>
+
+            <td>2</td>
+            <td>活着</td>
+            <td><img src="images/up.jpg" alt="活着"></td>
+            <td>19098</td>
+            <td>8976863</td>
+            <td><a href="#">百科</a>&nbsp;<a href="#">地图</a></td>
+            <tr>
+                <td>3</td>
+                <td>一九八四</td>
+                <td><img src="images/down.jpg" alt="一九八四"></td>
+                <td>19098</td>
+                <td>86063</td>
+                <td><a href="#">百科</a>&nbsp;<a href="#">地图</a></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>动物庄园</td>
+                <td><img src="images/up.jpg" alt="动物庄园"></td>
+                <td>1798</td>
+                <td>8976863</td>
+                <td><a href="#">百科</a>&nbsp;<a href="#">地图</a></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>普罗米修斯</td>
+                <td><img src="images/down.jpg" alt="普罗米修斯"></td>
+                <td>178</td>
+                <td>908</td>
+                <td><a href="#">百科</a>&nbsp;<a href="#">地图</a></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>动物庄园</td>
+                <td><img src="images/up.jpg" alt="动物庄园"></td>
+                <td>19898</td>
+                <td>86863</td>
+                <td><a href="#">百科</a>&nbsp;<a href="#">地图</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!--合并单元格-->
+    <table align="center" width="440" height="149" border="1" cellspacing="0">
+        <tr>
+            <td></td>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td rowspan="2"></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <!--无序列表 有序列表 自定义列表-->
+    <h4>大模型列表</h4>
+    <ul>
+        <li>ChatGPT-3.5</li>
+        <li>ChatGPT-4</li>
+        <li>GLM</li>
+        <li>
+            <B>MiniMax</B>
+            <p>Moss</p>
+        </li>
+    </ul>
+
+    <h4>粉丝排行榜</h4>
+    <ol>
+
+        <li>Ritchie 10000</li>
+        <li>Robot 500</li>
+        <li>Quanhangbo 1</li>
+    </ol>
+    <dl>
+        <dt>名词</dt>
+        <dd>名词的解释1</dd>
+        <dd>名字的解释2</dd>
+        <dd>名词的解释3</dd>
+    </dl>
+
+    <!--表单： 表单域 + 表单元素 + 提示信息
+        表单域：form用于定义表单域 会把范围内的信息传给后端服务器
+    -->
+    <form action="demo.html" method="get" name="name1"></form>
+    <form action="demo.html">
+        账号：<input type="text" name="account" id="" value="请输入账号"> <br>
+        密码：<input type="password" name="password" id="" maxlength="8"> <br>
+        性别：男<input type="radio" name="sex" id="" value="男" checked="checked"> 女<input type="radio" name="sex" id=""
+            value="女">
+        <br>
+        爱好：编程<input type="checkbox" name="hobby" id="" value="编程" checked="checked"> 象棋<input type="checkbox"
+            name="hobby" id="" value="象棋"> 游泳<input type="checkbox" name="hobby" value="游泳"><br>
+        <!--button一般结合js使用-->
+        <input type="submit" name="" id="" value="免费注册"> <input type="reset" name="" id="" value="重新填写"> <input
+            type="button" name="" id="" value="获取验证码">
+        上传头像：<input type="file" name="" id="">
+    </form>
+    <!--label绑定一个表单元素 但点击<label>标签文本时，浏览器就会自动将焦点转移到对应的表单元素上 for和表单中的id是映射关系-->
+    <label for="sex">男</label> <input type="text" name="" id="sex"><br>
+    <label for="male">男</label> <input type="radio" name="sex" id="male" value="男"> <label for="female">女</label><input
+        type="radio" name="sex" id="female" value="女">
+
+    <form action="">
+        籍贯：
+        <select name="" id="">
+            <option value="">陕西</option>
+            <!--默认选线-->
+            <option value="" selected="selected">安徽</option>
+            <option value="">北京</option>
+            <option value="">吉林</option>
+            <option value="">上海</option>
+            <option value="">浙江</option>
+        </select>
+    </form>
+    <!--内容较多的情况下使用textarea-->
+    <form action="">
+        留言：
+        <textarea name="" id="" cols="100" rows="10"></textarea>
+    </form>
+
+    <h4>青春不常在，赶紧谈恋爱</h4>
+    <form action="demo.html" method="get">
+        <table>
+            <tr>
+                <td>性别</td>
+                <td>
+                    <input type="radio" name="sex" id="man"><label for="man">男</label>
+                    <input type="radio" name="sex" id="woman"><label for="woman">女</label>
+                </td>
+            </tr>
+            <tr>
+                <td>生日</td>
+                <td>
+                    <select name="brithday" id="">
+                        <option value="">请选择年份</option>
+                        <option value="">1999</option>
+                        <option value="">2000</option>
+                        <option value="">2001</option>
+                        <option value="">2002</option>
+                        <option value="">2003</option>
+                    </select>
+                    <select name="brithday" id="">
+                        <option value="">请选择月份</option>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                        <option value="">6</option>
+                        <option value="">7</option>
+                        <option value="">8</option>
+                        <option value="">9</option>
+                        <option value="">10</option>
+                    </select>
+                    <select name="brithday" id="">
+                        <option value="">请选择日</option>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                        <option value="">6</option>
+                        <option value="">7</option>
+                        <option value="">8</option>
+                        <option value="">9</option>
+                        <option value="">10</option>
+                        <option value="">11</option>
+                        <option value="">12</option>
+                        <option value="">13</option>
+                        <option value="">14</option>
+                        <option value="">15</option>
+                        <option value="">16</option>
+                        <option value="">17</option>
+                        <option value="">18</option>
+                        <option value="">19</option>
+                        <option value="">20</option>
+                    </select>
+            </tr>
+            </td>
+            <tr>
+                <td>所在地区</td>
+                <td>
+                    <input type="text" name="address" id=""><br>
+                </td>
+            </tr>
+            <tr>
+                <td>婚姻状况</td>
+                <td>
+                    <input type="radio" name="marriage" id="nomarriaged"><label for="nomarriaged">未婚</label><input
+                        type="radio" name="marriage" id="married"><label for="married">已婚</label>
+                    <input type="radio" name="marriage" id="divorce"><label for="divorce">离婚</label>
+                </td>
+            </tr>
+            <tr>
+                <td>喜欢的类型</td>
+                <td><input type="checkbox" name="hobby" id="">妩媚的 <input type="checkbox" name="hobby" id="">可爱的 <input
+                        type="checkbox" name="hobby" id="">性感的 <input type="checkbox" name="hobby" id="">都喜欢的<br></td>
+            </tr>
+            <tr>
+                <td>自我介绍</td>
+                <td><textarea name="introduce" id="" cols="30" rows="10"></textarea><br>
+                    <input type="submit" name="submit" id="" value="免费注册"><br>
+                    <input type="checkbox" name="" id="" checked="checked">我同意注册条款和会员加入标准<br>
+                    <a href="#" target="_blank">我是会员，立即登录</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                </td>
+                <td>
+                    <h4>我承诺</h4>
+                    <ul>
+                        <li>年满18岁，单身</li>
+                        <li>抱着严肃的态度</li>
+                        <li>真诚寻找另一半</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </form>
 </body>
 
 </html>
