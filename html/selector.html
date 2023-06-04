@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 所有的a标签变紫  后代选择器 */
+        .nav ul li a {
+            color: purple;
+        }
+
+        /* 子选择器 */
+        .hot>a {
+            color: red;
+        }
+
+        /* 并列选择器 用逗号隔开*/
+        .peace>a,
+        .peace>ul {
+            font: 32px 'microsoft yahei';
+        }
+
+        /* 伪类选择器 向某些选择器添加特殊效果 如:hover, :first-child */
+        a {
+            /* text-decoration: none; */
+            /* color: gray; */
+        }
+
+        /* a:hover {
+            color: gold;
+        } */
+
+        /* a:link {
+            color: #333;
+        }
+
+        a:visited {
+            color: blue;
+        } */
+
+        /* 把获得光标的input表单元素选取出来 */
+        input:focus {
+            background-color: aqua;
+            color: red;
+        }
+
+        /* html一般分为块元素和行内块元素 */
+        /* 常见的块元素：<h1>~<h6>、<p>、<div>、<ul>、<ol>、<li>等 div是最典型的块元素 
+            特点：
+            1. 独占一行
+            2. 高度、宽度、外边距、内边距都可以控制
+            3. 宽度默认是容器的100%
+            4. 是一个容器以及盒子 里面可以放行内或者块级元素
+
+            注意：
+            a. 文字类的元素内不使用块级元素 p标签主要用于存放文字 p标签不能放块级元素，特别是不能放div
+
+
+            常见的行内元素: <a>、<strong>、<b>、<em>、<i>、<del>、<u>、<ins>、<span>，span是最典型的行内元素，行内元素也即内联元素
+                特点：
+                1. 一行可以显示多个
+                2. 宽和高直接设置是无效的
+                3. 默认宽度是本身内容的宽度
+                4. 行内元素只能容纳文本内容或者其他行内元素
+
+                注意：链接里面不可以继续放链接 特殊情况链接<a>里面可以放块级元素，但是要给<a>转为块级元素
+
+
+            行内块元素：<img/> <input/> <td> 同时具备块元素+行内元素特点
+                特点：
+                1. 一行可以显示多个（行内元素特点）
+                2. 默认宽度是本身内容的宽度（行内元素特点）
+                3. 宽和高以及内外边距可以控制（块级元素特点）
+
+            
+            不同显示元素之间的转换：
+            1. 转换为块元素：display:block;
+            2. 转换为行内元素：display:inline;
+            3. 转换为行内块：display:inline-block;
+            
+            */
+        a {
+            display: block;
+            width: 236px;
+            height: 42px;
+            background-color: #A3A1A1;
+            text-decoration: none;
+            color: #eee;
+            text-indent: 2em;
+            line-height: 42px;
+        }
+
+        a:hover {
+            background-color: #ff6700;
+        }
+
+        .alone {
+            font-size: 42px;
+            background-color: aquamarine;
+            height: 300px;
+        }
+
+        /* 行内元素设置宽和高 没用 */
+        span {
+            width: 200px;
+            height: 100px;
+            background-color: hotpink;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href="#">百度</a></li>
+            <li><a href="#">百度</a></li>
+        </ul>
+    </div>
+
+    <div class="hot">
+        <a href="#">大肘子</a>
+        <ul>
+            <li><a href="#">猪头</a></li>
+            <li><a href="#">狗头</a></li>
+        </ul>
+    </div>
+
+    <div class="peace">
+        <a href="#">乌克兰战争</a>
+        <ul>
+            <li>美国</li>
+            <li>日本</li>
+            <li>德国</li>
+        </ul>
+        <p>中国</p>
+    </div>
+
+    <span><a href="#">百度</a>&nbsp;<a href="#">谷歌</a>&nbsp;<a href="#">OPENAI</a></span><br>
+
+    <input type="text">
+    <input type="text" name="" id="">
+
+    <a href="">手机</a><a href="">电视</a><a href="">家电</a><a href="">笔记本 平板</a><a href="">出行 穿戴</a><a href="">耳机 音响</a><a
+        href="">健康 儿童</a><a href="">生活 箱包</a><a href="">智能 路由器</a>
+
+    <div class="alone">独占一行</div>
+    <p>
+    <div>这里有问题</div>
+    </p>
+
+    <span>阿里巴巴</span><span>腾讯</span><span>拼多多</span>
+</body>
+
+</html>

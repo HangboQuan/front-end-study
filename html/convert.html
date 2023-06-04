@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素显示模式转换</title>
+    <style>
+        /* a {
+            width: 150px;
+            height: 50px;
+            background-color: pink;
+            display: block;
+        } */
+
+        /* div {
+            width: 300px;
+            height: 100px;
+            background-color: purple;
+            display: inline;
+        } */
+
+        span {
+            width: 300px;
+            height: 100px;
+            background-color: skyblue;
+            display: inline-block;
+        }
+
+        .cat {
+            width: 400px;
+            height: 200px;
+            /* 设置背景颜色 */
+            /* background-color: pink; */
+            background-image: url(images/logo.png);
+            /* 不平铺 */
+            background-repeat: no-repeat;
+            /* background-repeat: repeat-x; 沿x轴平铺 */
+            /* background-repeat: repeat-y; 沿y轴平铺 */
+            /* 页面元素既可以添加背景颜色也可以添加背景图片 只不过背景图片会压住背景颜色 */
+            /* background-position: center; */
+            /* background-position: top; */
+            background-position: left bottom;
+        }
+
+        h3 {
+            font-weight: 400;
+            font-size: 14px;
+            width: 150px;
+            height: 26px;
+            line-height: 26px;
+            text-indent: 1.5em;
+            background-image: url(images/icon.png);
+            background-repeat: no-repeat;
+            background-position: left center;
+        }
+
+        body {
+            /* background-image: url(images/bg.jpg);
+            background-repeat: no-repeat;
+            background-position: center top;*/
+
+            /* 默认情况下背景图是滚动式的，也就是会随着文本滚动 */
+            /*background-attachment: fixed;
+            color: #fff;
+            font-size: 20px; */
+
+            /* 一句话简写 */
+            /* 没有固定的写法，但是一般习惯的写法为 背景颜色 背景图片地址 背景平铺 背景图像滚动 背景图片位置 */
+            background: black url(images/bg.jpg) no-repeat fixed center top;
+        }
+
+        .hello {
+            width: 200px;
+            height: 100px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <a href="#">链接1</a>
+    <a href="#">链接2</a> -->
+
+
+    <div>我是块级元素</div>
+    <div>我是块级元素</div>
+
+    <span>行内元素转为行内块元素</span>
+    <span>行内元素转为行内块元素</span>
+
+
+    <div class="cat">
+        小猫
+    </div>
+
+    <h3>成长守护平台</h3>
+    <p>加油</p>
+    <p>加油</p>
+    <p>加油</p>
+    <p>加油</p>
+    <p>加油</p>
+    <p>加油</p>
+    <p>加油</p>
+    <p>加油</p>
+    <p>加油</p>
+    <p>加油</p>
+    <p>加油</p>
+    <p>加油</p>
+    <p>加油</p>
+    <p>加油</p>
+    <p>加油</p>
+    <p>加油</p>
+
+    <div class="hello">
+        隐形的翅膀
+    </div>
+
+
+
+
+</body>
+
+</html>
