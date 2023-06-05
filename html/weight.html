@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 层叠性 : 平级标签时，就近原则*/
+        /* div {
+            color: blue;
+            font-size: 22px;
+        }
+
+        div {
+            color: red;
+        } */
+
+        /* 继承性 : 如果当前元素不指定样式，则继承父类样式*/
+
+        /* div {
+            color: purple;
+            font-size: 12px;
+        }
+
+        p {
+            color: pink;
+        } */
+
+        /* 行高的继承 */
+
+
+        body {
+            color: pink;
+            /* 第二个属性表示是font-size的倍数，这样的话行高为18px */
+            font: 12px/1.5 Microsoft YaHei;
+        }
+
+        div {
+            font-size: 14px;
+        }
+
+        /* 虽然id选择器 > 标签选择器 但是这里是p标签继承了父标签，因此父标签的权重消失为零，重写p标签后，就展示p标签的内容了 */
+        #father {
+            color: red;
+        }
+
+        p {
+            font-size: 16px;
+            color: pink;
+        }
+
+
+        /* 优先级
+        权重可以叠加 但是无法进位 复合选择器
+        1. 继承 或者 * : 0,0,0,0
+        2. 标签选择器: 0,0,0,1
+        3. 类选择器或伪类选择器: 0,0,1,0
+        4. id选择器：0,1,0,0
+        5. !important: 1,0,0,0 
+        
+        */
+
+        .mtn {
+            color: red;
+        }
+
+        #btn {
+            color: plum !important;
+        }
+
+        .nav {
+            color: red;
+        }
+
+        /* li {
+            color: black;
+        } */
+
+        ul {
+            color: brown;
+        }
+
+        ul li {
+            color: blue;
+        }
+
+        /* 继承的权重是0 */
+        /* a链接 浏览器默认制定了 一个样式 蓝色的下划线 a{color: bule;} */
+    </style>
+</head>
+
+<body>
+    <div>人生自古谁无死，留取丹心照美帝</div>
+
+    <div>
+        <p>权利的游戏</p>
+    </div>
+
+    <ul>
+        <li>没有指定文字大小</li>
+    </ul>
+
+    <div class="mtn" id="btn" style="color: purple">大楚兴陈胜王</div>
+
+    <ul class="nav">
+        <li>齐天大圣</li>
+        <li>北冥</li>
+        <li>风清扬</li>
+    </ul>
+
+
+    <div id="father">
+        <p>继承的权重为零</p>
+    </div>
+</body>
+
+</html>
