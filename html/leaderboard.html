@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 500px;
+            height: 249px;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid black;
+            /* 合并相邻的边框 */
+            border-collapse: collapse;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* div {
+            width: 180px;
+            height: 180px;
+            background-color: skyblue;
+            border: 10px solid red;
+        } */
+
+        /* 内边距会撑大盒子 */
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            /* padding-top: 20px;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 20px; */
+            /* padding: 20px; */
+            /* padding: 20px 30px; */
+
+            /* padding: 10px 20px 30px; */
+            padding: 10px 20px 30px 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <table align="center" border="1" cellspacing="0" width="400">
+        <!--
+                thead和tbody都是放在table标签中
+                thead用于定义表格头部 thead必须拥有tr标签
+                tbody用于定义表格主体 用于放数据本体
+            -->
+        <thead>
+            <tr>
+                <th>排名</th>
+                <th>关键词</th>
+                <th>趋势</th>
+                <th>今日搜索</th>
+                <th>最近七日</th>
+                <th>相关链接</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>动物庄园</td>
+                <td><img src="images/up.jpg" alt="动物庄园"></td>
+                <td>19098</td>
+                <td>8976863</td>
+                <td><a href="#">百科</a>&nbsp;<a href="#">地图</a></td>
+            </tr>
+
+            <td>2</td>
+            <td>活着</td>
+            <td><img src="images/up.jpg" alt="活着"></td>
+            <td>19098</td>
+            <td>8976863</td>
+            <td><a href="#">百科</a>&nbsp;<a href="#">地图</a></td>
+            <tr>
+                <td>3</td>
+                <td>一九八四</td>
+                <td><img src="images/down.jpg" alt="一九八四"></td>
+                <td>19098</td>
+                <td>86063</td>
+                <td><a href="#">百科</a>&nbsp;<a href="#">地图</a></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>动物庄园</td>
+                <td><img src="images/up.jpg" alt="动物庄园"></td>
+                <td>1798</td>
+                <td>8976863</td>
+                <td><a href="#">百科</a>&nbsp;<a href="#">地图</a></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>普罗米修斯</td>
+                <td><img src="images/down.jpg" alt="普罗米修斯"></td>
+                <td>178</td>
+                <td>908</td>
+                <td><a href="#">百科</a>&nbsp;<a href="#">地图</a></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>动物庄园</td>
+                <td><img src="images/up.jpg" alt="动物庄园"></td>
+                <td>19898</td>
+                <td>86863</td>
+                <td><a href="#">百科</a>&nbsp;<a href="#">地图</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div>背景：本人在读研究生，学校津贴加老师发的津贴加起来一个月三千多。我和男朋友是现在的同学，经济状况差不多。</div>
+
+
+</body>
+
+</html>
