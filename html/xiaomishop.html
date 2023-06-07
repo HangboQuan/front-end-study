@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .box {
+            width: 298px;
+            height: 415px;
+            background-color: #fff;
+            margin: 100px auto;
+        }
+
+        .box img {
+            width: 100%;
+        }
+
+        .box .review {
+            margin-top: 30px;
+            color: #4E5154;
+            font-size: 14px;
+
+            /* 什么情况下会撑大盒子？没有指定height/width属性的时候，不会撑大盒子？ */
+            padding: 0 28px;
+        }
+
+        .box .comment {
+            font-size: 8px;
+            color: #C0C0C0;
+            margin-top: 25px;
+
+            padding: 0 28px;
+        }
+
+        .box .foot {
+            margin-top: 20px;
+            padding: 0 28px;
+            font-size: 14px;
+        }
+
+        .foot {
+            font-size: 14px;
+            margin-top: 15px;
+            padding: 0 28px;
+        }
+
+        .foot h4 {
+            display: inline-block;
+            font-weight: 400;
+
+        }
+
+        .foot h4 a {
+            text-decoration: none;
+        }
+
+        .foot em {
+            font-style: normal;
+            color: #ebe4e0;
+            margin: 0 6px 0 15px;
+        }
+
+        .foot span {
+            color: #ff6700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="images/img.jpg" alt="小米耳机">
+        <p class="review">快递牛，整体不错蓝牙可以说秒连，红米给力</p>
+
+        <div class="comment">来自于11733842232的评价</div>
+        <div class="foot">
+            <h4><a href="#">Redmi AirDots真无线蓝...</a></h4>
+            <em>|</em>
+            <span>99.9元</span>
+        </div>
+    </div>
+</body>
+
+</html>

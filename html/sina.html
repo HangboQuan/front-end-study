@@ -86,6 +86,19 @@
         }
     </style> -->
 
+
+    <!-- 外边距可以让块级盒子水平居中 满足下列两个条件：
+        1. 盒子必须指定宽度
+        2. 盒子左右外边距都设置auto 常见写法：margin:0 auto
+        行内元素或者行内块元素水平居中 只需给父元素添加text-align:center即可， 把行内元素和行内块元素当做文本内容  来看
+
+        外边距合并
+        1.相邻块元素垂直外边距合并，上下相邻的两个块元素，上面指定了margin-bottom，下面指定margin-top，他们的距离不是两者之和，而是取两个值中的较大者
+        解决方案：尽量只给一个盒子添加margin值
+        2.两个嵌套关系的块元素，父元素有上外边距&&子元素也有上外边距 此时父元素会塌陷较大的外边距值
+        解决方案：
+            可以为父元素定义上边框|可以为父元素定义内边距|可以为父元素添加overflow:hidden 还有其他方法，比如浮动、固定、绝对定位的盒子
+    -->
     <!-- <style>
         div {
             width: 200px;
@@ -110,7 +123,8 @@
         }
     </style> -->
 
-    <style>
+
+    <!-- <style>
         .williamII,
         .williamIII {
             width: 200px;
@@ -125,6 +139,32 @@
 
         .williamIII {
             margin-top: 200px;
+        }
+    </style> -->
+
+    <style>
+        .father {
+            width: 400px;
+            height: 400px;
+            background-color: purple;
+            margin-top: 30px;
+            border: 1px solid transparent;
+            /* overflow: hidden; */
+            /* padding: 100px 0; */
+        }
+
+        .son {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+
+            margin-top: 50px;
+        }
+
+        * {
+            /* 行内元素为了照顾兼容性，尽量只设置左右内外边距 不要设置上下内外边距  */
+            padding: 0;
+            margin: 0;
         }
     </style>
 </head>
@@ -156,8 +196,13 @@
         <img src="images/down.jpg" alt="">
     </div> -->
 
-    <div class="williamII">williamII Bill</div>
-    <div class="williamIII">williamIII Bill</div>
+    <!-- <div class="williamII">williamII Bill</div>
+    <div class="williamIII">williamIII Bill</div> -->
+
+    <!-- 嵌套块级元素垂直外边距塌陷 -->
+    <div class="father">
+        <div class="son"></div>
+    </div>
 
 </body>
 
