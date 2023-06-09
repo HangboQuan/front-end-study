@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 四个角和半径为10像素的圆相切 */
+        /* div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px auto;
+            
+            border-radius: 10px;
+        } */
+
+        /* 设置为宽度和高度的一半就可以绘制圆形 */
+        .circle {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            border-radius: 100px;
+        }
+
+        /* 圆形举证设置为高度的一半 */
+        .circle_matrix {
+            width: 300px;
+            height: 100px;
+            background-color: skyblue;
+            border-radius: 50px;
+        }
+
+        /* 左上 - 右下 */
+        .normal_radius {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px 20px 30px 40px;
+            background-color: skyblue;
+        }
+
+
+
+        /* box-shadow的属性：
+            h-shahow: 水平阴影 负值为向左(必需)
+            v-shahow: 垂直阴影 负值为向左(必需)
+            blur: 模糊距离
+            spread: 阴影的尺寸
+            color: 阴影的颜色
+            inset: 选择外部阴影还是内部阴影
+        
+        
+        */
+        .shadow {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            box-shadow: 10px 10px;
+        }
+
+        .shadow:hover {
+            box-shadow: 10px 10px 10px 4px rgb(0, 0, 0, 0.3);
+        }
+
+        .text-shadow {
+            font-size: 50px;
+            font-weight: 700;
+            color: orangered;
+            text-shadow: 5px 5px 6px rgb(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div></div> -->
+
+    <div class="circle"></div>
+
+    <div class="circle_matrix"></div>
+
+    <div class="normal_radius"></div>
+
+    <div class="shadow"></div>
+
+    <div class="text-shadow">
+        我是阴影文字
+    </div>
+
+</body>
+
+</html>

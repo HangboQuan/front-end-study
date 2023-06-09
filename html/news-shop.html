@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .box {
+            width: 248px;
+            height: 163px;
+            border: 1px dotted #ccc;
+            margin: 100px auto;
+        }
+
+        /*  盒子指定了宽和高之后，padding会撑大盒子
+            盒子本身没有指定宽/高，则padding不会撑大盒子
+            子盒子是无法继承父盒子的width/height
+
+            常见的子盒子不可继承父盒子的属性有：width、height、border、margin、padding
+
+            常见的块级元素和它的父亲一样宽，这是块级元素独显一行的特点 宽度和高度是不可能被继承的 除非添加属性标签
+            */
+        .box h3 {
+            font-weight: 400;
+            height: 32px;
+            font-size: 14px;
+            line-height: 32px;
+            padding-left: 15px;
+            border-bottom: 1px dotted #ccc;
+        }
+
+        .box ul li {
+            height: 23px;
+            line-height: 23px;
+            padding-left: 20px;
+        }
+
+        .box ul li a {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .box ul {
+            margin-top: 7px;
+        }
+    </style>
+    <!-- <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .news {
+            width: 274px;
+            height: 182px;
+            margin: 0 auto;
+            background-color: #F5F5F5;
+            border: 1px solid transparent;
+        }
+
+        .news .nav {
+            height: 35px;
+            background-color: pink;
+            font-weight: 400;
+            padding-left: 15px;
+            line-height: 35px;
+
+        }
+
+        .news .fill {
+            height: 147px;
+            line-height: 25px;
+            padding-top: 10px;
+            padding-left: 20px;
+            font-size: 14px;
+        }
+    </style> -->
+</head>
+
+<body>
+    <!-- <div class="news">
+        <h4 class="nav">
+            品优购快报
+        </h4>
+        <div class="content">
+            <p class="fill">
+                【特惠】爆款耳机5折秒！<br />
+                【特惠】爆款耳机5折秒！<br />
+                【特惠】爆款耳机5折秒！<br />
+                【特惠】9.9元洗100张照片<br />
+                【特惠】长虹智能空调立省1000<br />
+            </p>
+        </div>
+    </div> -->
+
+    <div class="box">
+        <h3>品优购快报</h3>
+        <ul>
+            <li><a href="#">【特惠】爆款耳机5折秒！</a></li>
+            <li><a href="#">【特惠】爆款耳机5折秒！</a></li>
+            <li><a href="#">【特惠】爆款耳机5折秒！</a></li>
+            <li><a href="#">【特惠】爆款耳机5折秒！</a></li>
+            <li><a href="#">【特惠】爆款耳机5折秒！</a></li>
+        </ul>
+    </div>
+
+
+</body>
+
+</html>
