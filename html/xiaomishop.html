@@ -1,100 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        * {
-            padding: 0;
-            margin: 0;
-        }
-
-        body {
-            background-color: #f5f5f5;
-        }
-
-        a {
-            color: #333;
-            text-decoration: none;
-        }
-
-        .box {
-            width: 298px;
-            height: 415px;
-            background-color: #fff;
-            margin: 100px auto;
-        }
-
-        .box img {
-            width: 100%;
-        }
-
-        .box .review {
-            margin-top: 30px;
-            color: #4E5154;
-            font-size: 14px;
-
-            /* 什么情况下会撑大盒子？没有指定height/width属性的时候，不会撑大盒子？ */
-            padding: 0 28px;
-        }
-
-        .box .comment {
-            font-size: 8px;
-            color: #C0C0C0;
-            margin-top: 25px;
-
-            padding: 0 28px;
-        }
-
-        .box .foot {
-            margin-top: 20px;
-            padding: 0 28px;
-            font-size: 14px;
-        }
-
-        .foot {
-            font-size: 14px;
-            margin-top: 15px;
-            padding: 0 28px;
-        }
-
-        .foot h4 {
-            display: inline-block;
-            font-weight: 400;
-
-        }
-
-        .foot h4 a {
-            text-decoration: none;
-        }
-
-        .foot em {
-            font-style: normal;
-            color: #ebe4e0;
-            margin: 0 6px 0 15px;
-        }
-
-        .foot span {
-            color: #ff6700;
-        }
-    </style>
+    <link rel="stylesheet" href="xiaomishop.css">
 </head>
-
 <body>
-    <div class="box">
-        <img src="images/img.jpg" alt="小米耳机">
-        <p class="review">快递牛，整体不错蓝牙可以说秒连，红米给力</p>
+    <div class="top-nav w">
+        <div class="top-center-product">
+            <ul class="center-nav">
+                <li><a href="">小米官网</a></li>
+                <li><a href="">小米商城</a></li>
+                <li><a href="">MIUI</a></li>
+                <li><a href="">IoT</a></li>
+                <li><a href="">云服务</a></li>
+                <li><a href="">天星数科</a></li>
+                <li><a href="">有品</a></li>
+                <li><a href="">小爱开放平台</a></li>
+                <li><a href="">企业团购</a></li>
+                <li><a href="">资质证照</a></li>
+                <li><a href="">协议规则</a></li>
+                <li><a href="">下载app</a></li>
+                <li><a href="">Select Location</a></li>
+            </ul>
 
-        <div class="comment">来自于11733842232的评价</div>
-        <div class="foot">
-            <h4><a href="#">Redmi AirDots真无线蓝...</a></h4>
-            <em>|</em>
-            <span>99.9元</span>
+            <div class="login">
+                <a href="">登录</a>
+                <a href="">注册</a>
+                <a href="">消息通知</a>
+            </div>
+
+            <div class="shop-car">
+                <a href=""><span>购物车（0）</span></a>
+            </div>
+           
+        </div>
+        
+    </div>
+
+    <div class="home-nav w">
+        <div class="logo">
+            <img src="xiaomishop/logo-mi2.png" alt="">
+        </div>
+        <ul>
+            <li><a href="">Xiaomi手机</a></li>
+            <li><a href="">Redmi手机</a></li>
+            <li><a href="">电视</a></li>
+            <li><a href="">笔记本</a></li>
+            <li><a href="">平板</a></li>
+            <li><a href="">家电</a></li>
+            <li><a href="">路由器</a></li>
+            <li><a href="">服务中心</a></li>
+            <li><a href="">社区</a></li>
+        </ul>
+      
+        <div class="search">
+            <input type="text" value="手机">
+            <button>搜索</button>
+        </div>
+    </div>
+
+    <div class="center w clearfix">
+        <div class="center-left ">
+            <ul>
+                <li><a href="">手机<span>&gt;</span></a></li>
+                <li><a href="">电视<span>&gt;</span></a></li>
+                <li><a href="">家电<span>&gt;</span></a></li>
+                <li><a href="">笔记本 平板<span>&gt;</span></a></li>
+                <li><a href="">出行 穿戴<span>&gt;</span></a></li>
+                <li><a href="">耳机 音响<span>&gt;</span></a></li>
+                <li><a href="">健康 儿童<span>&gt;</span></a></li>
+                <li><a href="">生活 箱包<span>&gt;</span></a></li>
+                <li><a href="">智能 路由器<span>&gt;</span></a></li>
+                <li><a href="">电源 配件<span>&gt;</span></a></li>
+            </ul>
+        </div>
+
+        <div class="center-right">
+        </div>
+    </div>
+
+    <div class="saled w clearfix">
+        <div class="saled-left">
+                <ul>
+                    <li>
+                        <img src="xiaomishop/small-skill5.png" alt="">
+                        <h4>保障服务</h4>
+                    </li>
+                    <li>
+                        <img src="xiaomishop/small-skill6.png" alt="">
+                        <h4>企业团购</h4>
+                    </li>
+                    <li>
+                        <img src="xiaomishop/small-skill1.png" alt="">
+                        <h4>F码通道</h4>
+                    </li>
+                    <li>
+                        <img src="xiaomishop/small-skill2.png" alt="">
+                        <h4>米粉卡</h4>
+                    </li>
+                    <li>
+                        <img src="xiaomishop/small-skill0.png" alt="">
+                        <h4>以旧换新</h4>
+                    </li>
+                    <li>
+                        <img src="xiaomishop/small-skill3.png" alt="">
+                        <h4>花费充值</h4>
+                    </li>
+
+                    
+                </ul>
+        </div>
+
+        <div class="saled-right">
+            <ul>
+                <li>
+                    <img src="xiaomishop/home-main0.jpg" alt="">
+                </li>
+                <li>
+
+                    <img src="xiaomishop/home-sub-row1.jpg" alt="">
+                </li>
+                <li>
+
+                      <img src="xiaomishop/home-sub-row1.jpg" alt="">
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+
+    <div class="interval w clearfix">
+
+        
+    </div>
+
+    <div class="topic-phone w">
+        <div class="phone-nav">
+            <h4>手机</h4>
+            <a href="">查看更多</a>
+        </div>
+
+        <div class="phone-detail">
+            <div class="left-main-phone-ad">
+                <img src="xiaomishop/phone0.webp" alt="">
+            </div>
+
+            <div class="right-detail-phone">
+                <ul>
+                    <li>
+                        <img src="xiaomishop/phone1.webp">
+                        <h4>Redmi Note 12T Pro</h4>
+                        <p>年度LCD屏幕之光</p> 
+                        
+                        <h5>1599元起</h5>
+                </li>
+                <li>
+                    <img src="xiaomishop/phone1.webp">
+                    <h4>Redmi Note 12T Pro</h4>
+                    <p>年度LCD屏幕之光</p> 
+                    
+                    <h5>1599元起</h5>
+            </li>
+            <li>
+                <img src="xiaomishop/phone1.webp">
+                <h4>Redmi Note 12T Pro</h4>
+                <p>年度LCD屏幕之光</p> 
+                
+                <h5>1599元起</h5>
+        </li>
+        <li>
+            <img src="xiaomishop/phone1.webp">
+            <h4>Redmi Note 12T Pro</h4>
+            <p>年度LCD屏幕之光</p> 
+            
+            <h5>1599元起</h5>
+    </li>
+    <li>
+        <img src="xiaomishop/phone1.webp">
+        <h4>Redmi Note 12T Pro</h4>
+        <p>年度LCD屏幕之光</p> 
+        
+        <h5>1599元起</h5>
+</li>
+<li>
+    <img src="xiaomishop/phone1.webp">
+    <h4>Redmi Note 12T Pro</h4>
+    <p>年度LCD屏幕之光</p> 
+    
+    <h5>1599元起</h5>
+</li>
+<li>
+    <img src="xiaomishop/phone1.webp">
+    <h4>Redmi Note 12T Pro</h4>
+    <p>年度LCD屏幕之光</p> 
+    
+    <h5>1599元起</h5>
+</li>
+<li>
+    <img src="xiaomishop/phone1.webp">
+    <h4>Redmi Note 12T Pro</h4>
+    <p>年度LCD屏幕之光</p> 
+    
+    <h5>1599元起</h5>
+</li>
+                </ul>
+            </div>
         </div>
     </div>
 </body>
-
 </html>

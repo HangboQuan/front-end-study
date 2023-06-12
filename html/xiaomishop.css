@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f5f5f5;
+    height: 2000px;
+}
+
+.sub-body {
+    background-color: #f5f5f5;
+}
+
+.w {
+    width: 1226px;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.top-nav {
+    background-color: #333;
+}
+.top-center-product {
+    height: 40px;
+    background-color: #333;
+}
+
+.top-center-product .center-nav {
+    float: left;
+}
+
+.top-center-product .center-nav li {
+    float: left;
+    line-height: 40px;
+    margin-right: 14px;
+}
+
+.top-center-product .center-nav li a {
+    color: #b0b0b0;
+    font-size: 12px;
+}
+.top-center-product .center-nav li a:hover{
+    color: #fff;
+}
+
+.top-center-product .login {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 150px;
+}
+
+.top-center-product .login a{
+    color: #b0b0b0;
+    font-size: 12px;
+    padding-right: 15px;
+}
+
+.top-center-product .login a:hover {
+    color: #fff;
+}
+
+.top-center-product .shop-car {
+    float: right;
+    width: 100px;
+    padding-left: 20px;
+}
+
+.top-center-product .shop-car a {
+    color: #b0b0b0;
+    line-height: 40px;
+}
+
+.top-center-product .shop-car:hover {
+    background-color: #fff;
+}
+.top-center-product .shop-car a:hover {
+    color: #f76200;
+}
+
+.home-nav {
+    margin-top: 1px;
+    height: 100px;
+    background-color: #fff;
+}
+
+.logo {
+    float: left;
+    margin: 20px;
+}
+.home-nav img {
+    height: 56px;
+    width: 56px;
+    /* line-height: 56px; */
+}
+
+.home-nav ul {
+    float: left;
+    margin-left: 134px;
+}
+
+.home-nav ul li {
+    float: left;
+    padding: 38px 8px;
+}
+
+.home-nav ul li a {
+    text-align: center;
+    color: #333;
+}
+.home-nav ul li a:hover{
+    color: #f76200;
+}
+
+.search {
+    float: right;
+    width: 294px;
+    height: 44px;
+    background-color: red;
+    margin: 27px 0;
+}
+
+.search input {
+    float: left;
+    width: 234px;
+    height: 43px;
+    padding-left: 10px;
+    border: 1px solid #b0b0b0;
+    border-right: 0;
+}
+
+.search button {
+    float: left;
+    width: 49px;
+    height: 44px;
+    border: 1px solid #b0b0b0;
+}
+
+.center-left {
+    float: left;
+    width: 234px;
+    height: 458px;
+    background: rgba(0,0,0,0.3);
+}
+
+.clearfix:before,.clearfix:after {
+    content:"";
+    display:table; 
+  }
+  .clearfix:after {
+    clear:both;
+  }
+  .clearfix {
+     *zoom:1;
+  }   
+
+.center-left ul {
+    padding: 20px 0px 20px 0px;
+   
+}
+
+.center-left ul li {
+    height: 42px;
+    padding-left: 20px;
+    line-height: 42px;
+}
+
+.center-left ul li:hover {
+    background-color: #f76200;
+}
+
+.center-left ul li a span {
+    float: right;
+    margin-right: 20px;
+}
+
+.center-right {
+    float: left;
+    width: 992px;
+    height: 458px;
+    background: url(xiaomishop/main.webp) no-repeat top center;
+}
+
+.saled {
+    background-color: #fff;
+    margin-top: 14px;
+}
+
+
+
+.saled-left {
+    float: left;
+    width: 234px;
+    height: 168px;
+    background-color:#333;
+}
+
+.saled-left ul {
+    margin-top: 15px;
+}
+
+.saled-left ul li {
+    float: left;
+    width: 70px;
+    height: 64px;
+    margin: 3px;
+}
+
+
+.saled-left ul li img {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    margin: 0 23px 4px;
+}
+
+.saled-left ul li h4 {
+    font-size: 12px;
+    font-weight: 400;
+    color: #ceccca;
+    text-align: center;
+}
+
+.saled-right {
+    float: left;
+}
+
+.saled-right ul li {
+    float: left;
+    margin-left: 14px;
+}
+
+.saled-right ul li:hover {
+    box-shadow: 0 5px 5px 3px rgba(0,0,0, 0.1);;
+}
+
+.saled-right img {
+    width: 316px;
+    height: 168px;
+   
+}
+
+.interval {
+    margin-top: 24px ;
+    margin-bottom: 40px;
+    height: 120px;
+    background-color: red;
+    background: url(xiaomishop/home-nav.webp) no-repeat top center;
+}
+
+.topic-phone {
+    height: 634px;
+    background-color: #fff ;
+}
+
+.phone-nav {
+    height: 24px;
+}
+.phone-nav h4 {
+    float: left;
+    font-size: 20px;
+    height: 24px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.phone-nav a {
+    float: right;
+    font-size: 16px;
+    height: 24px;
+    line-height: 24px;
+}
+
+.phone-detail {
+    height: 610px;
+}
+
+.left-main-phone-ad {
+    float: left;
+}
+
+.right-detail-phone ul li {
+    float: left;
+    width: 234px;
+    height: 300px;
+}
+.right-detail-phone ul li img {
+    width: 160px;    
+    height: 160px;
+    padding: 20px 30px;
+}
+
+.right-detail-phone ul li h4 {
+    font-weight: 400;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+}
