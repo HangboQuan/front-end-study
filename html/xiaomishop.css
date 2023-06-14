@@ -5,7 +5,6 @@
 
 body {
     background-color: #f5f5f5;
-    height: 2000px;
 }
 
 .sub-body {
@@ -28,6 +27,7 @@ li {
 .top-nav {
     background-color: #333;
 }
+
 .top-center-product {
     height: 40px;
     background-color: #333;
@@ -47,7 +47,8 @@ li {
     color: #b0b0b0;
     font-size: 12px;
 }
-.top-center-product .center-nav li a:hover{
+
+.top-center-product .center-nav li a:hover {
     color: #fff;
 }
 
@@ -58,7 +59,7 @@ li {
     margin-left: 150px;
 }
 
-.top-center-product .login a{
+.top-center-product .login a {
     color: #b0b0b0;
     font-size: 12px;
     padding-right: 15px;
@@ -82,12 +83,13 @@ li {
 .top-center-product .shop-car:hover {
     background-color: #fff;
 }
+
 .top-center-product .shop-car a:hover {
     color: #f76200;
 }
 
 .home-nav {
-    margin-top: 1px;
+    margin-top: 5px;
     height: 100px;
     background-color: #fff;
 }
@@ -96,10 +98,10 @@ li {
     float: left;
     margin: 20px;
 }
+
 .home-nav img {
     height: 56px;
     width: 56px;
-    /* line-height: 56px; */
 }
 
 .home-nav ul {
@@ -116,7 +118,8 @@ li {
     text-align: center;
     color: #333;
 }
-.home-nav ul li a:hover{
+
+.home-nav ul li a:hover {
     color: #f76200;
 }
 
@@ -124,7 +127,6 @@ li {
     float: right;
     width: 294px;
     height: 44px;
-    background-color: red;
     margin: 27px 0;
 }
 
@@ -148,23 +150,26 @@ li {
     float: left;
     width: 234px;
     height: 458px;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
 }
 
-.clearfix:before,.clearfix:after {
-    content:"";
-    display:table; 
-  }
-  .clearfix:after {
-    clear:both;
-  }
-  .clearfix {
-     *zoom:1;
-  }   
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
 
 .center-left ul {
     padding: 20px 0px 20px 0px;
-   
+
 }
 
 .center-left ul li {
@@ -175,6 +180,10 @@ li {
 
 .center-left ul li:hover {
     background-color: #f76200;
+}
+
+.center-left ul li a {
+    color: #fff;
 }
 
 .center-left ul li a span {
@@ -200,7 +209,7 @@ li {
     float: left;
     width: 234px;
     height: 168px;
-    background-color:#333;
+    background-color: #333;
 }
 
 .saled-left ul {
@@ -239,31 +248,33 @@ li {
 }
 
 .saled-right ul li:hover {
-    box-shadow: 0 5px 5px 3px rgba(0,0,0, 0.1);;
+    box-shadow: 0 5px 5px 3px rgba(0, 0, 0, 0.1);
+    ;
 }
 
 .saled-right img {
     width: 316px;
     height: 168px;
-   
+
 }
 
 .interval {
-    margin-top: 24px ;
-    margin-bottom: 40px;
+    margin-top: 24px;
+    margin-bottom: 24px;
     height: 120px;
     background-color: red;
     background: url(xiaomishop/home-nav.webp) no-repeat top center;
 }
 
 .topic-phone {
-    height: 634px;
-    background-color: #fff ;
+    height: 672px;
 }
 
 .phone-nav {
-    height: 24px;
+    height: 18px;
+    padding: 20px 0;
 }
+
 .phone-nav h4 {
     float: left;
     font-size: 20px;
@@ -277,10 +288,13 @@ li {
     font-size: 16px;
     height: 24px;
     line-height: 24px;
+    color: #333;
+    margin-right: 10px;
 }
 
 .phone-detail {
-    height: 610px;
+    height: 614px;
+
 }
 
 .left-main-phone-ad {
@@ -291,9 +305,13 @@ li {
     float: left;
     width: 234px;
     height: 300px;
+    margin-left: 14px;
+    margin-bottom: 14px;
+    background-color: #fff;
 }
+
 .right-detail-phone ul li img {
-    width: 160px;    
+    width: 160px;
     height: 160px;
     padding: 20px 30px;
 }
@@ -303,4 +321,362 @@ li {
     font-size: 16px;
     color: #333;
     text-align: center;
+    height: 24px;
+    line-height: 24px;
+}
+
+.right-detail-phone ul li p {
+    font-size: 12px;
+    color: #b0b0b0;
+    text-align: center;
+}
+
+.right-detail-phone ul li h5 {
+    height: 36px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #f76200;
+    text-align: center;
+    line-height: 36px;
+}
+
+.right-detail-phone ul li h5 span {
+    color: #b0b0b0;
+    text-decoration: line-through;
+}
+
+.topic-wearable {
+    height: 686px;
+}
+
+.topic-top-nav {
+    height: 18px;
+    padding: 20px 0;
+
+}
+
+.topic-top-nav h4 {
+    float: left;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.topic-top-nav ul {
+    float: right;
+}
+
+.topic-top-nav ul li {
+    float: right;
+    height: 24px;
+    line-height: 24px;
+    margin-left: 30px;
+}
+
+.topic-top-nav ul li a {
+    display: inline-block;
+    color: #333;
+    height: 22px;
+}
+
+.topic-top-nav ul li a:hover {
+    color: #f76200;
+    border-bottom: 2px solid #f76200;
+}
+
+.topic-top-detail {
+    height: 612px;
+}
+
+.wearable-common {
+    float: left;
+    width: 234px;
+}
+
+.wearable-detail {
+    float: left;
+    width: 978px;
+}
+
+.wearable-detail ul {
+    float: left;
+    width: 1236px;
+}
+
+.wearable-detail ul li {
+    float: left;
+    width: 234px;
+    height: 300px;
+    background-color: #fff;
+    margin-left: 14px;
+    margin-bottom: 14px;
+}
+
+.wearable-detail ul li:hover {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .1);
+}
+
+.wearable-detail ul li img {
+    height: 160px;
+    width: 160px;
+    margin: 20px 37px;
+}
+
+.wearable-detail ul li h4 {
+    height: 24px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.wearable-detail ul li p {
+    height: 24px;
+    font-size: 12px;
+    color: #b0b0b0;
+    line-height: 24px;
+    text-align: center;
+}
+
+.wearable-detail ul li h5 {
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-weight: 400;
+    color: #f76200;
+}
+
+.topic-computer {
+    margin-top: 20px;
+    height: 686px;
+}
+
+.computer-nav {
+    padding-top: 20px;
+    height: 48px;
+}
+
+.computer-nav h4 {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.computer-nav a {
+    float: right;
+    height: 28px;
+    line-height: 28px;
+    color: #f76200;
+    border-bottom: 2px solid #f76200;
+}
+
+.computer-common {
+    float: left;
+    width: 234px;
+}
+
+.topic-detail {
+    float: left;
+    width: 978px;
+}
+
+.topic-detail ul {
+    float: left;
+    width: 1236px;
+}
+
+.topic-detail ul li {
+    float: left;
+    width: 234px;
+    height: 300px;
+    margin-left: 14px;
+    margin-bottom: 14px;
+    background-color: #fff;
+}
+
+.topic-detail ul li img {
+    width: 160px;
+    height: 160px;
+    margin: 20px 37px;
+}
+
+.topic-detail ul li h4 {
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.topic-detail ul li p {
+    font-size: 12px;
+    text-align: center;
+    height: 20px;
+    line-height: 20px;
+    color: #b0b0b0;
+}
+
+.topic-detail ul li h5 {
+    font-size: 14px;
+    height: 28px;
+    line-height: 28px;
+    font-weight: 400;
+    color: #f76200;
+    text-align: center;
+}
+
+.footer {
+    margin-top: 20px;
+    background-color: #fff;
+}
+
+.footer-nav {
+    height: 80px;
+    border-bottom: 1px solid #b0b0b0;
+    background-color: #fff;
+}
+
+.footer-nav ul li {
+    float: left;
+
+    padding: 28px 64px 28px 0;
+}
+
+.footer-nav ul li a {
+    display: inline-block;
+    color: #333;
+    height: 27px;
+    line-height: 27px;
+    padding-left: 64px;
+    border-left: 1px solid #b0b0b0;
+
+}
+
+.footer-nav ul li .first-nav {
+    border: 0;
+}
+
+.footer-service {
+    padding: 40px 0;
+    height: 392px;
+    background-color: #fff;
+}
+
+.website {
+    margin-left: 120px;
+}
+
+.website .col-links {
+    float: left;
+    width: 160px;
+    height: 362px;
+
+}
+
+.website .col-links dt {
+    height: 40px;
+    font-size: 14px;
+    color: #333;
+}
+
+.website .col-links dd {
+    height: 28px;
+    font-size: 12px;
+    color: #757575;
+    line-height: 28px;
+}
+
+.phone-concat {
+    float: right;
+    width: 200px;
+    height: 100px;
+    padding: 10px 50px 0 50px;
+    border-left: 1px solid #b0b0b0;
+}
+
+.phone-concat h4 {
+    font-size: 24px;
+    color: #f76200;
+    font-weight: 400;
+}
+
+.phone-concat p {
+    font-size: 12px;
+    color: #b0b0b0;
+}
+
+.phone-concat a {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: center;
+    padding: 5px 24px;
+    border: 1px solid #f76200;
+    font-size: 14px;
+    color: #f76200;
+}
+
+
+.site-footer {
+    margin-top: 50px;
+    height: 180px;
+}
+
+
+
+.site-footer .logo {
+    float: left;
+
+}
+
+.site-footer .logo img {
+    height: 56px;
+    width: 56px;
+}
+
+.site-logo-detail {
+    float: left;
+}
+
+.site-logo-detail .nav a {
+    text-align: center;
+    font-size: 12px;
+    color: #757575;
+}
+
+.site-logo-detail .nav span {
+    font-size: 12px;
+    margin-left: 5px;
+    color: #b0b0b0;
+}
+
+.site-logo-detail .meeting a {
+    font-size: 12px;
+    color: #757575;
+}
+
+.site-logo-detail .meeting span {
+    font-size: 12px;
+    margin-left: 5px;
+    color: #b0b0b0;
+}
+
+.site-logo-detail .abstract {
+    font-size: 12px;
+    color: #b0b0b0;
+}
+
+.site-footer-detail {
+    float: left;
+    padding-left: 100px;
+    margin-top: 10px;
+}
+
+.site-footer-detail img {
+    height: 28px;
+}
+
+.footer-slogan img {
+    display: block;
+    text-align: center;
+    padding: 0 400px;
+    margin-bottom: 50px;
 }
