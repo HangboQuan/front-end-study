@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>script基本语法</title>
+    <!-- 内嵌式 -->
+    <script>
+        // alert('hello, javascript!')
+
+        // 输入输出语句
+        // prompt('请输入你的年龄');
+        // alert('你已经被统计了');
+        // console.log('程序员控制台打印的');
+
+        var age = 18;
+        console.log(age);
+
+
+        var username = 'quanhangbo';
+        console.log(username)
+
+        // var myname = prompt("请输入你的名字");
+        // console.log(myname);
+
+        var name = "zhangwen";
+        console.log(name);
+        name = "wuqinzhuo";
+        console.log(name)
+
+
+        // 只声明，并不初始化 则类型为undefined
+        var sex;
+        console.log(sex);
+
+        // 不声明也可直接赋值
+        qq = "2409711401";
+        console.log(qq)
+
+        // js是弱类型声明 只有程序在运行过程中 根据右边的等号值来确定
+        var str = "pinduoduo";
+        str = 1984;
+        console.log(str);
+
+        // Infinity无穷大 -Infinity无穷小
+        var max = Number.MAX_VALUE;
+        var min = Number.MIN_VALUE;
+        console.log(max + " " + min);
+
+        // NaN (Not a number)
+        console.log('quanhangbo' - 1999);
+        // 判断是否为数字
+        console.log(isNaN(1989));
+
+
+        var str = '关山难越，谁悲失落之人。"虎"落平阳被犬欺';
+        var str1 = "关山难越，谁被失落之人。'虎'落平阳被犬欺，我要\n换行"
+        console.log(str);
+        console.log(str1);
+
+        // var age1 = prompt("请输入你的年龄");
+        // console.log("你的年龄是" + age + "岁");
+
+
+        var flag = true;
+        var flag1 = false;
+        console.log(flag);
+        console.log(flag1);
+
+
+        var val = undefined;
+        console.log(val + 'quanhangbo');
+        console.log(val + 1);
+
+
+        var empty = null;
+        console.log(empty + 'quanhangbo');
+        console.log(empty + 1);
+
+        var number = 10;
+        console.log(typeof number)
+
+        var val = undefined;
+        console.log(typeof val);
+
+        var space = null;
+        console.log(typeof space);
+
+        console.log(18);
+        console.log('18');
+        console.log(true);
+        console.log(undefined);
+        console.log(null);
+
+        var number1 = 1999;
+        number1.toString;
+        String(number1);
+        console.log(number1 + "");
+
+        parseInt('100');
+        parserFloat('188');
+    </script>
+
+    <!-- 外部引入 -->
+    <!-- <script src="my.js"></script> -->
+</head>
+
+<body>
+    <!-- js和css一样，有三种方式可以引入
+    1.行内
+    <input type="button" value="唐伯虎" onclick="alert('石榴')">
+    2.内嵌式js
+    3.外部引入 -->
+
+
+</body>
+
+</html>
