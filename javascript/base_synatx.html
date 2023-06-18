@@ -100,7 +100,344 @@
         console.log(number1 + "");
 
         parseInt('100');
-        parserFloat('188');
+        parseFloat('188');
+
+        // var uname = prompt('输入姓名');
+        // var uage = prompt('输入年龄');
+        // var usex = prompt('输入性别');
+
+        // console.log('你的姓名是：' + uname + '年龄：' + uage + '性别：' + usex);
+
+
+        console.log(1 + 1);
+        console.log(1 - 1);
+        console.log(1 * 1);
+        console.log(1 / 1);
+
+        // 1. 取余
+        console.log(4 % 2);
+        console.log(5 % 3);
+        console.log(3 % 5);
+
+        // 2. 浮点数
+        // 结果为0.30000000000000004
+        console.log(0.1 + 0.2);
+        // false
+        console.log(0.1 + 0.2 == 0.3);
+
+        var i = 1;
+        console.log(i++);
+        console.log(i);
+        console.log(++i);
+        console.log(i);
+
+        // true false 三个等号 要求两侧的值、数据类型都一摸一样
+        console.log(18 == '18');
+        console.log(18 === '18');
+
+        // 算术运算符 > 逻辑运算符
+
+        // 逻辑运算符
+        // 与运算 逻辑短路 如果是表达式1为真 - 返回表达式2 如果表达式1为假 则返回表达式1
+        console.log(123 && 456);
+        console.log(0 & 123);
+        // 或运算 逻辑短路 如果表达式为1为真 - 返回表达式1 如果表达式1为假 则返回表达式2
+        console.log(123 || 456);
+        console.log(0 || 456);
+
+        var num = 0;
+        console.log(123 || num++);
+        console.log(num);
+
+        // if ("I'am huangxiuyu") {
+        //     alert("huangxiuyu");
+        // }
+
+        // var year = prompt('请您输入年份：');
+        // if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+        //     console.log('这是闰年');
+        // } else {
+        //     console.log('这不是闰年');
+        // }
+
+        // 成绩
+        // var score = prompt("please input your score:");
+        // if (score >= 90) {
+        //     alert('优秀');
+        // } else if (score >= 80) {
+        //     alert('良好');
+        // } else if (score >= 70) {
+        //     alert('中等');
+        // } else if (score >= 60) {
+        //     alert('及格');
+        // } else {
+        //     alert('不及格');
+        // }
+
+        // 支持三元表达式
+        // var number2 = number2 > 10 ? "YES" : "NO";
+        // console.log(number2);
+
+        var number2;
+
+        // 如果不初始化，则为undefined， 而不是null/0/""
+        // false
+        console.log(number2 == 0);
+
+        // 支持switch case 表达式必须于case的条件全等 才为true，以及注意break
+        switch (5) {
+            case 1: console.log(1); break;
+            case 2: console.log(2); break;
+            default: console.log("other");
+        }
+
+        var sum = 0;
+        for (var i = 0; i <= 100; i++) {
+            sum += i;
+        }
+        console.log(sum);
+
+        // var str = '';
+        // for (var i = 1; i <= 10; i++) {
+        //     for (var j = i; j <= 10; j++) {
+        //         str = str + "*";
+        //     }
+        //     str += "\n";
+        // }
+        // console.log(str);
+
+        var str = '';
+        for (var i = 1; i <= 9; i++) {
+            for (var j = 1; j <= i; j++) {
+                str += j + 'x' + i + '=' + i * j + '\t';
+            }
+            str += '\n';
+        }
+        console.log(str);
+
+        var number3 = 1;
+        while (number3 < 10) {
+            console.log(number3++);
+        }
+
+        var i = 1;
+        do {
+            console.log('how are you?');
+            i++;
+        } while (i < 100)
+
+
+        var s = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 7 == 0) {
+                continue;
+            }
+            s += i;
+        }
+        console.log(s);
+
+        for (var i = 0; i < 10; i++) {
+            if (i == 5) {
+                break;
+            }
+        }
+
+        // 创建一个空数组
+        var arr = new Array();
+
+        // 创建一个空数组
+        var arr = [];
+
+        var arr1 = [1, 2, 'quanhangbo', true];
+        for (var i = 0; i < arr1.length; i++) {
+            console.log(arr1[i]);
+        }
+
+        var arr2 = ['red', 'green', 'blue'];
+        console.log(arr.length);
+        arr2.length = 5;
+        console.log(arr[3]);
+        console.log(arr[4]);
+
+        var newArr = [];
+        for (var i = arr2.length - 1; i >= 0; i--) {
+            newArr[newArr.length] = arr2[i];
+        }
+        console.log(newArr);
+
+        function getSum(num1, num2) {
+            console.log(num1 + num2);
+        }
+        getSum(1, 2, 3);
+
+        function fn() {
+            // 只有函数才有arguments对象 而且是每个函数都内置好了arguments
+            for (var i = 0; i < arguments.length; i++) {
+                console.log(arguments[i]);
+            }
+        }
+        fn(1, 2, 3);
+
+        var num = 10;
+        // 外部函数 作用域链：内部函数访问外部函数的变量 采取的是链式查找的方式来决定取哪个值 就近原则
+        function fn1() {
+            var num = 20;
+            // 内部函数
+            function fun() {
+                console.log(num);
+            }
+            fun();
+        }
+        fn1();
+
+        function f1() {
+            var num = 123;
+
+            function f2() {
+                var num = 0;
+                console.log(num);
+            }
+            f2();
+        }
+        var num = 456;
+        f1();
+
+        var a = 1;
+
+        function fn1() {
+            var a = 2;
+            var b = '22';
+            fn2();
+
+            function fn2() {
+                var a = 3;
+                fn3();
+
+                function fn3() {
+                    var a = 4;
+                    console.log(a);
+                    console.log(b);
+                }
+            }
+        }
+        fn1();
+
+
+        // 等价于后面
+        // var num3;
+        // console.log(num3);
+        // num3 = 10;
+        console.log(num3);
+        var num3 = 10;
+
+        // 这句话会出现报错
+        /**
+         * 函数表达式 调用必须写在函数表达式下面
+         * var fun;
+         * fun();
+         * fun = function() {
+         *     console.log(22);
+         * } 
+         **/
+        // fun1();
+        // var fun1 = function () {
+        //     console.log(22);
+        // }
+
+        /**
+         * js引擎运行分为2步：预解析 代码执行
+         * 1. 预解析：把所有的var还有function 提升到当前作用域的最前面
+         * 2. 代码执行： 从上之下执行
+         **/
+
+        // 利用对象字面量创建对象
+        // 创建了一个空对象
+        // var obj = {};
+        var obj = {
+            uname: 'quanhangbo',
+            age: 18,
+            sex: 'female',
+            hello: function () {
+                console.log('hello, world');
+            }
+
+        }
+        console.log(obj.uname);
+        obj.hello();
+
+        var obj1 = new Object();
+        obj1.name = 'wuqinzhuo';
+        obj1.age = 21;
+        obj1.sex = 'female';
+        obj1.sayHi = function () {
+            console.log('hello, everyone');
+        }
+        obj1.sayHi();
+
+
+        // 使用构造函数 
+        function Star(username, age, sex, address) {
+            this.username = username;
+            this.age = age;
+            this.sex = sex;
+            this.address = address;
+        }
+        var dennis_ritchie = Star('dennis Ritchie', 55, 'male', 'America');
+        // undefined
+        console.log(dennis_ritchie);
+
+
+        // 可以自己封装对象
+        var myMath = {
+            PI: 3.141592653,
+            max: function () {
+                var max = arguments[0];
+                for (var i = 1; i < arguments.length; i++) {
+                    if (arguments[i] > max) {
+                        max = arguments[i];
+                    }
+                }
+                return max;
+            },
+            min: function () {
+                var min = arguments[0];
+                for (var i = 1; i < arguments.length; i++) {
+                    if (arguments[i] < min) {
+                        min = arguments[i];
+                    }
+                }
+                return min;
+            }
+        }
+        console.log(myMath.PI);
+        console.log(myMath.max(0, 1, 2));
+        // [0,1)
+        console.log(Math.random());
+
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        // [1,10]
+        console.log(getRandom(1, 10));
+
+        var date = new Date();
+        console.log(date);
+
+        //Tue Jul 18 2023 00:00:00 GMT+0800 (中国标准时间) 返回的是下一个月的时间
+        var date1 = new Date(2023, 6, 18);
+        console.log(date1);
+
+        // Sun Jun 18 2023 08:08:08 GMT+0800 (中国标准时间)
+        var date2 = new Date('2023-6-18 8:8:8');
+        console.log(date2);
+
+
+        console.log(date.getFullYear());
+        console.log(date.getMonth() + 1);
+        console.log(date.getDate());
+
+        console.log(date.getDay());
+
     </script>
 
     <!-- 外部引入 -->
