@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function exponential_cdf(x) {
+            // 即 1 - 2^(-x);
+            return 1 - 2 ** -x;
+        }
+
+        function log_normal_cdf(x) {
+            return x / (x + 1);
+        }
+        function calculateRank(
+            all_commits,
+            commit,
+            prs,
+            issues,
+            repos,
+            stars,
+            followers,
+        ) {
+            // median 用作中位数的意思
+            const COMMIT_MEDIAN = all_commits ? 1000 : 250,
+                COMMIT_WEIGHT = 2;
+
+            const PRS_MEDIAN = 50,
+                PRS_WEIGHT = 3;
+
+            const ISSUE_MEDIAN = 50,
+                ISSUE_WEIGHT = 1;
+
+            const STARS_MEDIAN = 50,
+                STARS_WEIGHT = 4;
+
+            const FOLLOWERS_MEDIAN = 10,
+                FOLLOWERS_WEIGHT = 1;
+
+            const TOTAL_WEIGHT = COMMIT_WEIGHT + PRS_WEIGHT + ISSUE_WEIGHT + STARS_WEIGHT + FOLLOWERS_WEIGHT;
+
+            const THRESHOLDS = [1, 12.5, 25, 37.5, 50, 62.5, 75, 87.5, 100];
+            const LEVELS = ["S", "A+", "A", "A-", "B+", "B", "B-", "C+", "C"];
+
+            const rank = 1 - (COMMIT_WEIGHT * exponential_cdf(commit / COMMIT_MEDIAN) +
+                PRS_WEIGHT * exponential_cdf(prs / PRS_MEDIAN) +
+                ISSUE_WEIGHT * exponential_cdf(issues / ISSUE_MEDIAN) +
+                STARS_WEIGHT * log_normal_cdf(stars / STARS_MEDIAN) +
+                FOLLOWERS_WEIGHT * log_normal_cdf(followers / FOLLOWERS_MEDIAN)) / TOTAL_WEIGHT;
+
+            const level = LEVELS[THRESHOLDS.findIndex((t) => rank * 100 <= t)];
+            console.log(rank);
+            console.log(level);
+        }
+
+        calculateRank(false, 341, 0, 1, 0, 141, 14);
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

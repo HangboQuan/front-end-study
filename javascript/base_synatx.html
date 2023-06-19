@@ -438,6 +438,80 @@
 
         console.log(date.getDay());
 
+        function getTimer() {
+            var time = new Date();
+            var h = time.getHours();
+            h = h < 10 ? '0' + h : h;
+            var m = time.getMinutes();
+            m = m < 10 ? '0' + m : m;
+            var s = time.getSeconds();
+            s = s < 10 ? '0' + s : s;
+            return h + ":" + m + ":" + s;
+        }
+        console.log(getTimer());
+
+        var date = new Date();
+        // 两者都是 距离1970.1.1 的毫秒
+        console.log(date.valueOf());
+        console.log(date.getTime());
+
+        var date1 = +new Date();
+        console.log(date1);
+
+        // 现在是6.19 14:10, 我们举行重大活动, 要求实现一个距离7.7 0点的倒计时功能
+        function CountDownLatchTimer(activeTime) {
+            var nowTime = +new Date();
+            var duration = activeTime.valueOf() - nowTime;
+
+            var times = duration / 1000;
+            // ms -> s
+            console.log(times);
+            var day = parseInt(times / 60 / 60 / 24);
+            var hour = parseInt(times / 60 / 60 % 24);
+            var minute = parseInt(times / 60 % 60);
+            var second = parseInt(times % 60);
+            console.log(day + "天" + hour + "小时" + minute + '分钟' + second + '秒');
+        }
+        CountDownLatchTimer(new Date('2023-06-19 18:00:00'));
+
+        // 创建数组的几种方式
+        var arr = [1, 2, 3];
+        console.log(arr[0]);
+
+        var arr1 = new Array(2, 3);
+        console.log(arr1);
+
+        function reverse(arr) {
+            // 判断是否为数组类型 arr instanceof Array
+            if (Array.isArray(arr)) {
+                var newArr = [];
+                for (var i = arr.length - 1; i >= 0; i--) {
+                    newArr[newArr.length] = arr[i];
+                }
+                return newArr;
+            }
+        }
+
+        console.log(reverse([1, 2, 3]));
+        console.log(reverse(1, 2, 3));
+        var obj = {};
+        console.log(Array.isArray(obj));
+
+
+        function operationArray(arr) {
+            arr = [1, 2, 4];
+            // 添加两个元素
+            arr.push(4, 'dennis ritchie');
+            // 数组头添加元素
+            arr.unshift('red', 'Tom');
+
+            console.log(arr.pop());
+            // 删除数组第一个元素
+            console.log(arr.shift());
+            return arr;
+        }
+
+        console.log(operationArray([1, 2, 3]));
     </script>
 
     <!-- 外部引入 -->
