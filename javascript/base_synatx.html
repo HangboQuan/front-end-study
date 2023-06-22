@@ -508,10 +508,185 @@
             console.log(arr.pop());
             // 删除数组第一个元素
             console.log(arr.shift());
+            // return arr;
+
+            var arr1 = [15000, 16000, 18000, 21000];
+            var newArr1 = [];
+            for (var i = 0; i < arr1.length; i++) {
+                if (arr1[i] <= 16000) {
+                    newArr1.push(arr1[i]);
+                }
+            }
+            console.log(newArr1);
+
+            var arr2 = ['quanhangbo', 'dennis ritchie'];
+            arr2.reverse();
+            console.log(arr2);
+
+            var arr3 = [13, 4, 77, 1, 7];
+            arr3.sort(function (a, b) {
+                // 升序排列
+                return a - b;
+            })
+            console.log(arr3);
+
+
+            var arr4 = ['red', 'skyblue', 'purple'];
+            // 从前向后查询 返回第一个下标
+            console.log(arr4.indexOf('purple'));
+            // 如果查询不到，则返回-1
+            console.log(arr4.indexOf('black'));
             return arr;
         }
 
+        function uniqueArray(arr) {
+            var newArr = [];
+            for (var i = 0; i < arr.length; i++) {
+                if (newArr.indexOf(arr[i]) === -1) {
+                    newArr.push(arr[i]);
+                }
+            }
+            // 默认情况下 newArr.toString() === newArr.join()
+            console.log(newArr.toString());
+            console.log(newArr.join());
+            console.log(newArr.join("-"));
+            console.log(newArr.join("&"));
+
+
+            var str = 'andy';
+            console.log(str);
+
+            str = 'tiger';
+            console.log(str);
+
+            var str1 = '';
+            for (var i = 1; i <= 10; i++) {
+                str1 += i;
+            }
+            console.log(str1);
+
+            var str2 = "Do you know How much bread cost?";
+            console.log(str2.indexOf('know'));
+            console.log(str2.indexOf("know", 2));
+
+            var str3 = "oabcoefoxyozzopp";
+            var index = str3.indexOf("o");
+            var num = 0;
+            while (index !== -1) {
+                num++;
+                index = str3.indexOf("o", index + 1);
+            }
+            console.log(num);
+
+
+            var str4 = "quanhangbo";
+            // 根据位置返回字符
+            console.log(str4.charAt(3));
+
+            // 返回相应索引号的字符ASCII值 目的： 判断用户按下了哪个键
+            console.log(str4.charCodeAt(0));
+
+            console.log(str4[0]);
+            return newArr;
+        }
+
+        function commonFunction() {
+            var user = {
+                age: 28
+            }
+            if (user['sex']) {
+                console.log('存在sex属性');
+            } else {
+                console.log('不存在sex属性');
+            }
+
+            var str = "abcoefoxyozzopp";
+            var u = {};
+            for (var i = 0; i < str.length; i++) {
+                var chars = str.charAt(i);
+                if (u[chars]) {
+                    u[chars]++;
+                } else {
+                    u[chars] = 1;
+                }
+            }
+            console.log(u);
+
+            var max = 0;
+            var ch = '';
+            for (var k in u) {
+                if (u[k] > max) {
+                    max = u[k];
+                    ch = k;
+                }
+            }
+            console.log(max);
+            console.log(ch);
+
+            var str1 = "dongzhuo";
+            console.log(str1.concat("caocao"));
+
+            var str2 = "quanhangbo";
+            // 从第二个索引 截取2个字符 an
+            console.log(str2.substr(2, 2));
+
+            var str3 = "alibaba";
+
+            // 只会替换第一个字符
+            console.log(str3.replace('a', 'b'));
+            while (str3.indexOf('a') !== -1) {
+                str3 = str3.replace('a', 'b');
+            }
+            console.log(str3);
+
+            // 字符串 -> 数组
+            var str4 = 'red, pink, skyblue';
+            console.log(str4.split(", "));
+
+            var timer = null;
+            // 返回空对象 object
+            console.log(typeof timer);
+
+        }
+
         console.log(operationArray([1, 2, 3]));
+        console.log(uniqueArray([3, 2, 5, 8, 4, 7, 6, 2]));
+        console.log(commonFunction());
+
+        // 普通类型传参 数组也算基本类型 不改变原值
+        var x = 10;
+        fn = function (x) {
+            x++;
+            return x;
+        }
+        console.log(x + " " + fn(x) + " " + x);
+
+        var arr = [3, 2, 6, 8, 9, 4, 1];
+        fn1 = function (arr) {
+            console.log(arr);
+            arr = ['spring'];
+            return arr;
+        }
+        console.log(arr + " " + fn1(arr) + " " + arr);
+
+
+        // 复杂类型传参
+        function Person(name) {
+            this.name = name;
+
+        }
+
+        function fx1(x) {
+            console.log(x.name);
+            x.name = 'huangxiuyu';
+            console.log(x.name);
+        }
+        var p = new Person("quanhangbo");
+        console.log(p.name);
+        fx1(p);
+        console.log(p.name);
+
+
     </script>
 
     <!-- 外部引入 -->

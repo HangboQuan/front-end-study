@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+.black-background {
+    background-color: black;
+}
+
+.default-background {
+    background-color: #fff;
+}
+
+.jd {
+    width: 800px;
+    margin: 100px auto;
+}
+
+.jd ul li {
+    float: left;
+    padding: 0 10px;
+    height: 24px;
+    width: 60px;
+    background-color: #999;
+    font-size: 12px;
+    line-height: 24px;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .current,
+        p {
+            width: 300px;
+            height: 30px;
+            line-height: 30px;
+
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="time">2023-06-23</div>
+
+    <ul>
+        <li>汉臣校级校尉阿瞒誓杀奸贼董卓</li>
+        <li>玄德久历四方</li>
+        <li>周瑜小儿</li>
+    </ul>
+
+    <ol id="orderlist">
+        <li>alibaba</li>
+        <li>baidu</li>
+        <li>tencent</li>
+    </ol>
+
+    <div class="box">盒子1</div>
+    <div class="box">盒子2</div>
+    <div id="nav">
+        <ul>
+            <li>首页</li>
+            <li>
+                产品
+            </li>
+        </ul>
+    </div>
+
+    <button id="btn">唐伯虎</button>
+
+    <div id="number">123</div>
+
+    <button id="btn-time">显示当前时间</button>
+    <div class="current">
+        当前时间
+    </div>
+
+    <p>你是故意找茬</p>
+    <script>
+        // 返回的是一个元素对象 通过id选择器获取
+        var timer = document.getElementById('time');
+        console.log(timer);
+        console.log(typeof timer);
+        console.dir(timer);
+
+        // 伪数组， HTMLCollection 如果页面中没有这个标签 则返回的空的伪数组形式
+        var lis = document.getElementsByTagName("li");
+        console.log(lis);
+        for (var i = 0; i < lis.length; i++) {
+            console.log(lis[i]);
+        }
+
+        // var ol = document.getElementById('orderlist');
+        // console.log(ol.getElementsByTagName("li"));
+
+
+        // 通过标签选择器 和 类选择器获取
+        var ol = document.getElementsByTagName("ol");
+        console.log(ol[0].getElementsByTagName("li"));
+
+        var boxs = document.getElementsByClassName("box");
+        console.log(boxs);
+
+        // 返回指定选择器的第一个元素
+        var firstbox = document.querySelector(".box");
+        console.log(firstbox);
+
+        var nav = document.querySelector("#nav");
+        console.log(nav);
+
+        var li = document.querySelector("li");
+        console.log(li);
+
+        // NodeList 返回指定选择器的所有元素对象集合
+        var allBoxes = document.querySelectorAll(".box");
+        console.log(allBoxes);
+
+        // 事件三要素 事件源(谁) 事件类型(鼠标点击 | 鼠标经过 | 键盘按下) 事件处理程序 (完成 通过一个函数赋值的方法)
+        var btn = document.getElementById('btn');
+        btn.onclick = function () {
+            alert('点石榴姐');
+        }
+
+        // 执行事件的步骤
+        // 1. 获取事件源
+        var num = document.querySelector("#number");
+        // 2. 绑定事件（注册事件）3.添加事件处理程序
+        num.onclick = function () {
+            console.log("我被选择中了");
+        }
+
+
+        // 改变元素内容 innerText innerHTML
+        var btn_time = document.getElementById("btn-time");
+        var text = document.getElementsByClassName("current");
+
+        console.log(btn_time);
+        console.log(text[0]);
+        btn_time.onclick = function () {
+            var date = new Date();
+            var time = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+
+            // innerText不识别内容的html标签
+            // innerHtml可以识别html标签
+            text[0].innerText = time;
+        }
+
+        var p = document.querySelector('p');
+        var date = new Date();
+        var time = "<strong>current time :</strong>" + date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+        // p.innerText = time;
+        p.innerHTML = time;
+
+        // innerText 和 innerHTML 这两者是可以读和写的 读的时候同样innerText不显示html标签 innerHTML会显示
+    </script>
+</body>
+
+</html>
