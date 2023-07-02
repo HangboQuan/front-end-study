@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: url(images/1.jpg) no-repeat center top;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .baidu {
+            /* 溢出的部分隐藏起来 */
+            overflow: hidden;
+            margin: 100px auto;
+            background-color: #fff;
+            width: 410px;
+            padding-top: 3px;
+        }
+
+        .baidu li {
+            float: left;
+            margin: 0 1px;
+
+            /* 鼠标悬停时，鼠标光标会变成小手的形状 */
+            cursor: pointer;
+        }
+
+        .baidu img {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button> -->
+
+    <ul class="baidu">
+        <li><img src="images/1.jpg" alt=""></li>
+        <li><img src="images/2.jpg" alt=""></li>
+        <li><img src="images/3.jpg" alt=""></li>
+        <li><img src="images/4.jpg" alt=""></li>
+    </ul>
+    <script>
+        var btns = document.getElementsByTagName('button');
+        for (var i = 0; i < btns.length; i++) {
+            // 将所有的背景颜色去掉
+            btns[i].onclick = function () {
+                for (var i = 0; i < btns.length; i++) {
+                    btns[i].style.backgroundColor = '';
+                }
+                // 让当前元素变色
+                this.style.backgroundColor = 'skyblue';
+            }
+        }
+
+
+        var imgs = document.querySelector('.baidu').querySelectorAll('img');
+        for (var i = 0; i < imgs.length; i++) {
+            imgs[i].onclick = function () {
+                document.body.style.backgroundImage = 'url(' + this.src + ')';
+            }
+        }
+    </script>
+</body>
+
+</html>
