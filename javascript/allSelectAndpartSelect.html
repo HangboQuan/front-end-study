@@ -96,12 +96,53 @@
             </tbody>
         </table>
     </div>
+
+    <div id="demo" index="1" class="nav"></div>
     <script>
-        var detail_list = document.querySelector('j_cbAll');
-        var detail_goods = document.querySelector('j_tb').querySelectorAll('tr');
+        var detail_list = document.querySelector('#j_cbAll');
+        var detail_goods = document.querySelector('#j_tb').querySelectorAll('input');
         detail_list.onclick = function () {
             console.log(this.checked);
+            // 子input的checked 和 父input的checked 一致
+            for (var i = 0; i < detail_goods.length; i++) {
+                detail_goods[i].checked = this.checked;
+            }
         }
+
+        for (var i = 0; i < detail_goods.length; i++) {
+            detail_goods[i].onclick = function () {
+                var flag = true;
+                for (var j = 0; j < detail_goods.length; j++) {
+                    if (!detail_goods[j].checked) {
+                        flag = false;
+                        break;
+                    }
+                }
+                detail_list.checked = flag;
+            }
+        }
+
+
+        var self_attribute = document.querySelector('.nav');
+        // 获取元素属性值 element.属性
+        console.log(self_attribute.id);
+
+        console.log(self_attribute.getAttribute('id'));
+        console.log(self_attribute.getAttribute('index'));
+
+        // 设置元素属性值
+        self_attribute.id = 'test';
+        self_attribute.className = 'navs';
+        console.log(self_attribute.getAttribute('id'));
+        console.log(self_attribute.getAttribute('class'));
+
+
+        self_attribute.setAttribute('index', 2);
+        self_attribute.setAttribute('class', 'footer');
+
+        // 移除属性
+        self_attribute.removeAttribute('index');
+
     </script>
 </body>
 

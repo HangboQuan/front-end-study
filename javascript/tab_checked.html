@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .tab {
+            width: 978px;
+            margin: 100px auto;
+        }
+
+        .tab_list {
+            height: 39px;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab_list li {
+            float: left;
+            height: 39px;
+            line-height: 39px;
+            padding: 0 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .tab_list .current {
+            background-color: #c81623;
+            color: #fff;
+        }
+
+        .item {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab">
+        <div class="tab_list">
+            <ul>
+                <li class="current">商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价（5000）</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="tab_con">
+            <div class="item" style="display: block;">商品介绍模块内容</div>
+            <div class="item">规格与包装模块内容</div>
+            <div class="item">售后保障模块内容</div>
+            <div class="item">商品评价（5000）模块内容</div>
+            <div class="item">手机社区模块内容</div>
+        </div>
+    </div>
+    <div getTime="20" data-index="2" data-list-name="andy" class="self"></div>
+
+
+    <div>我是div</div>
+    <span>我是span</span>
+    <ul>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ul>
+
+    <div class="box">
+        <span class="code">x</span>
+        <div class="son-box">
+            <div class="grandson-box"></div>
+        </div>
+    </div>
+    <script>
+
+        var tab_list = document.querySelector('.tab_list').querySelector('ul').querySelectorAll('li');
+        var item = document.querySelectorAll('.item');
+        for (var i = 0; i < tab_list.length; i++) {
+            // 由于JavaScript的事件监听器是异步的，当点击选项卡的时候，循环内的index可能不会有预期的工作
+            // 因此改为获取自定义属性
+            // 自定义属性的目的：为了保存并使用数据。有些数据可以保存到页面中而不用保存到数据库中
+            // 自定义属性容易引起歧义，因此规定自定义属性以data-开头
+            tab_list[i].setAttribute('index', i);
+            tab_list[i].onclick = function () {
+                for (var j = 0; j < tab_list.length; j++) {
+                    tab_list[j].className = '';
+                }
+                for (var j = 0; j < tab_list.length; j++) {
+                    item[j].style.display = 'none';
+                }
+                this.className = 'current';
+                index = this.getAttribute('index');
+                item[index].style.display = 'block';
+            }
+        }
+
+        var div = document.querySelector(".self");
+        console.log(div.getAttribute('getTime'));
+        div.setAttribute('data-time', 20);
+        console.log(div.getAttribute('data-index'));
+        console.log(div.getAttribute('data-list-name'));
+
+        // 获取自定义属性的方法 只能获取data-开头的 dataset是一个集合里面存放了所有以data开头的自定义属性
+        console.log(div.dataset);
+        console.log(div.dataset.index);
+        console.log(div.dataset['index']);
+
+        // 如果自定义属性里面有多个-链接的单词  我们获取的时候采用 驼峰命名法
+        console.log(div.dataset.listName);
+        console.log(div.dataset['listName']);
+
+
+        var box = document.querySelector('.box');
+        // div.box
+        console.dir(box);
+
+        var grandson_box = document.querySelector('.grandson-box');
+        // 返回最近的父级 如果没有父级则返回null
+        console.log(grandson_box.parentNode);
+    </script>
+</body>
+
+</html>
