@@ -13,7 +13,7 @@
     <script>
 
         // server-sent events是基于http的单向链接协议，主要用于服务端向客户端推送消息，所以不能发送事件/消息从客户端->服务端
-        var source = new EventSource('http://127.0.0.1:8844/stream');
+        var source = new EventSource('http://127.0.0.1:8848/stream');
         var ex = document.querySelector('#example');
 
         console.log(source.CONNECTING);
@@ -22,7 +22,7 @@
             ex.innerHTML += '<p>Connection open ...</p>';
         };
 
-        source.addEventListener('connecttime', function (event) {
+        source.addEventListener('data', function (event) {
             ex.innerHTML += '<p>Start time: ' + event.data + '</p>';
         }, false);
 
