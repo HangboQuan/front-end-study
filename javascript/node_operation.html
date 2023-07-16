@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 100px;
+        }
+
+        textarea {
+            width: 200px;
+            height: 200px;
+            border: 1px solid skyblue;
+            outline: none;
+            resize: none;
+        }
+
+        ul {
+            margin-top: 50px;
+        }
+
+        li {
+            width: 300px;
+            padding: 5px;
+            background-color: rgb(245, 209, 243);
+            color: red;
+            font-size: 14px;
+            margin: 15px 0;
+        }
+
+        li a {
+            float: right;
+        } */
+    </style>
+</head>
+
+<body>
+    <textarea name="" id="">
+
+    </textarea>
+
+    <button>发布</button>
+
+    <ul></ul>
+
+    <ul class="unordered_list">
+        <li>top1</li>
+        <li>top2</li>
+        <li>top3</li>
+    </ul>
+
+    <script>
+
+        var btn = document.querySelector('button');
+
+        var text = document.querySelector('textarea');
+
+        var ul = document.querySelector('ul');
+
+
+        btn.onclick = function () {
+            if (text.value == '') {
+                alert('你输入的没有内容');
+                return false;
+            } else {
+                var li = document.createElement('li');
+                li.innerHTML = text.value + "<a href='javascript:;'>删除</a>";
+                ul.insertBefore(li, ul.children[0]);
+                text.value = '';
+
+                var as = document.querySelectorAll('a');
+                for (var i = 0; i < as.length; i++) {
+                    as[i].onclick = function () {
+                        ul.removeChild(this.parentNode);
+                    }
+                }
+
+                // var as = document.querySelector('a');
+                // as.onclick = function () {
+                //     ul.removeChild(this.parentNode);
+                // }
+            }
+
+        }
+
+
+        var un_list = document.querySelector('.unordered_list');
+
+
+        // node.cloneNode(); 括号为空或者false 浅拷贝 只复制标签不复制里面的内容
+        // node.cloneNode(true); 深拷贝 复制标签里面的内容
+        var lili = un_list.children[0].cloneNode(true);
+        un_list.appendChild(lili);
+    </script>
+</body>
+
+</html>
