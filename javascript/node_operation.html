@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        /* * {
+    <!-- <style>
+        * {
             margin: 0;
             padding: 0;
         }
@@ -38,12 +38,31 @@
 
         li a {
             float: right;
-        } */
+        } 
+    </style> -->
+
+    <style>
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        td,
+        th {
+            border: 1px solid #333;
+        }
+
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
     </style>
 </head>
 
 <body>
-    <textarea name="" id="">
+    <!-- <textarea name="" id="">
 
     </textarea>
 
@@ -55,50 +74,171 @@
         <li>top1</li>
         <li>top2</li>
         <li>top3</li>
-    </ul>
+    </ul> -->
+
+    <button>点击</button>
+    <p>abc</p>
+    <div class="inner"></div>
+    <div class="create"></div>
+
+    <table cellspacing="0">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+
+        <tbody></tbody>
+    </table>
 
     <script>
 
-        var btn = document.querySelector('button');
+        // var btn = document.querySelector('button');
 
-        var text = document.querySelector('textarea');
+        // var text = document.querySelector('textarea');
 
-        var ul = document.querySelector('ul');
+        // var ul = document.querySelector('ul');
 
 
-        btn.onclick = function () {
-            if (text.value == '') {
-                alert('你输入的没有内容');
-                return false;
-            } else {
-                var li = document.createElement('li');
-                li.innerHTML = text.value + "<a href='javascript:;'>删除</a>";
-                ul.insertBefore(li, ul.children[0]);
-                text.value = '';
+        // btn.onclick = function () {
+        //     if (text.value == '') {
+        //         alert('你输入的没有内容');
+        //         return false;
+        //     } else {
+        //         var li = document.createElement('li');
+        //         li.innerHTML = text.value + "<a href='javascript:;'>删除</a>";
+        //         ul.insertBefore(li, ul.children[0]);
+        //         text.value = '';
 
-                var as = document.querySelectorAll('a');
-                for (var i = 0; i < as.length; i++) {
-                    as[i].onclick = function () {
-                        ul.removeChild(this.parentNode);
-                    }
-                }
+        //         var as = document.querySelectorAll('a');
+        //         for (var i = 0; i < as.length; i++) {
+        //             as[i].onclick = function () {
+        //                 ul.removeChild(this.parentNode);
+        //             }
+        //         }
 
-                // var as = document.querySelector('a');
-                // as.onclick = function () {
-                //     ul.removeChild(this.parentNode);
-                // }
+        //         // var as = document.querySelector('a');
+        //         // as.onclick = function () {
+        //         //     ul.removeChild(this.parentNode);
+        //         // }
+        //     }
+
+        // }
+
+
+        // var un_list = document.querySelector('.unordered_list');
+
+
+        // // node.cloneNode(); 括号为空或者false 浅拷贝 只复制标签不复制里面的内容
+        // // node.cloneNode(true); 深拷贝 复制标签里面的内容
+        // var lili = un_list.children[0].cloneNode(true);
+        // un_list.appendChild(lili);
+
+
+        var datas = [{
+            name: 'quanhangbo',
+            subject: 'c++',
+            score: 59
+        }, {
+            name: 'dennis ritchie',
+            subject: 'c',
+            score: 100
+        }, {
+            name: 'wuqinzhuo',
+            subject: 'python',
+            score: 99
+        }, {
+            name: 'guanwenyu',
+            subject: 'tensorflow',
+            score: 98
+        }, {
+            name: 'yangming',
+            subject: 'java',
+            score: 61
+        }];
+
+        var tbody = document.querySelector('tbody');
+        for (var i = 0; i < datas.length; i++) {
+            // 创建tr行
+            var tr = document.createElement('tr');
+            tbody.appendChild(tr);
+            for (var k in datas[i]) {
+                var td = document.createElement('td');
+                td.innerHTML = datas[i][k];
+                tr.appendChild(td);
             }
-
+            var td = document.createElement('td');
+            td.innerHTML = '<a href="javascript:;">删除</a>'
+            tr.appendChild(td);
         }
 
 
-        var un_list = document.querySelector('.unordered_list');
+        var as = document.querySelectorAll('a');
+        for (var i = 0; i < as.length; i++) {
+            as[i].onclick = function () {
+                tbody.removeChild(this.parentNode.parentNode)
+            }
+        }
 
 
-        // node.cloneNode(); 括号为空或者false 浅拷贝 只复制标签不复制里面的内容
-        // node.cloneNode(true); 深拷贝 复制标签里面的内容
-        var lili = un_list.children[0].cloneNode(true);
-        un_list.appendChild(lili);
+        // 三种创建元素的方式
+        // 1. document.write()
+        var button = document.querySelector('button');
+        button.onclick = function () {
+            document.write('<div>123</div>');
+        }
+
+
+        // 2. innerHTML 创建元素
+        var inner = document.querySelector('.inner');
+        // for (var i = 0; i <= 100; i++) {
+        //     inner.innerHTML += '<a href="#">百度</a>'
+        // }
+
+        var arr = [];
+        for (var i = 0; i <= 100; i++) {
+            arr.push('<a href="#">百度</a>')
+        }
+        inner.innerHTML = arr.join('');
+
+        // 3. document.createElement() 创建元素
+        var create = document.querySelector('.create');
+
+        for (var i = 0; i <= 100; i++) {
+            var a = document.createElement('a');
+            create.appendChild(a);
+        }
+
+        function fn() {
+            var d1 = +new Date();
+            // for (var i = 0; i < 1000; i++) {
+            //     document.body.innerHTML += '<div style="width:100px; height: 2px; border: 1px solid blue;"></div>'
+            // }
+
+
+            // 此种方式效率会比较高
+            // var array = [];
+            // for (var i = 0; i < 1000; i++) {
+            //     array.push('<div style="width:100px; height:2px; border: 1px solid blue;"></div>')
+            // }
+            // document.body.innerHTML = array.join('');
+
+            for (var i = 0; i < 1000; i++) {
+                var div = document.createElement('div');
+                div.style.width = '100px';
+                div.style.height = '2px';
+                div.style.border = '1px solid red';
+                document.body.appendChild(div);
+            }
+            var d2 = +new Date();
+            console.log(d2 - d1);
+        }
+
+        fn();
+
     </script>
 </body>
 
