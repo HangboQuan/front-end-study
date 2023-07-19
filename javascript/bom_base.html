@@ -5,10 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+        }
+    </style>
 </head>
 
 <body>
-    <button>点击我</button>
+    <button>点击停止定时器</button>
     <script>
         var num = 10;
         console.log(num);
@@ -27,22 +34,80 @@
         var name = 10;
         console.log(window.name);
 
+        // bom是浏览器对象模型 提供了独立于内容而与浏览器窗口进行交互的对象 核心对象是window
+
+        // bom由一系列相关的对象构成 并且每个对象都提供了很多方法与属性
+        // load是当文档中的图片等信息加载完成之后，再去触发这个事件
+        // window.addEventListener('load', function () {
+        //     var btn = document.querySelector('button');
+        //     btn.addEventListener('click', function () {
+        //         alert('点击我');
+        //     })
+        // })
+
+        // window.addEventListener('load', function () {
+        //     alert(22);
+        // })
+
+        // 仅当dom加载完成就触发事件 不包括样式表、图片等
+        // window.addEventListener('DOMContentLoaded', function () {
+        //     alert(33);
+        // })
 
         window.addEventListener('load', function () {
-            var btn = document.querySelector('button');
-            btn.addEventListener('click', function () {
-                alert('点击我');
+            var div = document.querySelector('div');
+            window.addEventListener('resize', function () {
+                console.log(window.innerWidth);
+
+                console.log('变化了');
+
+                // 当前屏幕的宽度
+                if (window.innerWidth <= 800) {
+                    div.style.display = 'none';
+                } else {
+                    div.style.display = 'block';
+                }
             })
         })
 
+
+        setTimeout(function () {
+            console.log("bom bom bom");
+        }, 3000);
+
+
+        function callback() {
+            console.log('time past');
+        }
+        var timer1 = setTimeout(callback, 3000);
+        var timer2 = setTimeout(callback, 5000);
+
         window.addEventListener('load', function () {
-            alert(22);
+            var ad = document.querySelector('.ad');
+            setTimeout(function () {
+                ad.style.display = 'none';
+            }, 5000)
         })
 
-        window.addEventListener('DOMContentLoaded', function () {
-            alert(33);
+
+        var btn = document.querySelector('button');
+        var timer = setTimeout(function () {
+            console.log('爆炸了');
+        }, 5000);
+
+        // 清楚定时器
+        btn.addEventListener('click', function () {
+            clearTimeout(timer);
         })
+
+
+        // 每隔一秒就会执行该函数
+        setInterval(function () {
+            console.log('继续输出');
+        }, 1000)
     </script>
+    <img src="images/ad.jpg" alt="" class="ad">
+    <div></div>
 </body>
 
 </html>
