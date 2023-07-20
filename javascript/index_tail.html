@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <button>点击</button>
+    <script>
+        // console.log(decodeURI(location.search));
+        // var params = decodeURI(location.search.substr(1));
+        // console.log(params);
+
+        // var arr = params.split('=');
+        // console.log(arr);
+
+        // var div = document.querySelector('div');
+        // div.innerHTML = arr[1] + ',欢迎您';
+        var btn = document.querySelector('button');
+
+        btn.addEventListener('click', function () {
+            // 记录浏览历史 实现后退功能
+            // location.assign('https://talent.alibaba.com');
+
+            // 不记录浏览历史 不可实现后退功能
+            // location.replace('https://talent.alibaba.com');
+            // location.load() 简单的重新加载页面
+            // location.load(true) 强制从服务器上重新加载页面，而不是用缓存
+            location.reload(true);
+
+        })
+
+        // let语法是ES6 新增的语法 let和var的区别是 let只能在所在的代码块内有效
+        for (var i = 0; i < 10; i++) {
+            console.log('I bought ' + i + ' apples');
+        }
+
+        console.log(i); // if let i 报错 not defined if var i i = 10 因此for循环的计数器 就很适合let命令
+
+        var a = [];
+        for (var i = 0; i < 10; i++) {
+            a[i] = function () {
+                console.log(i);
+            };
+        }
+        console.log(a[6]);
+        console.log(a[6]());
+    </script>
+</body>
+
+</html>

@@ -34,6 +34,13 @@
 
     <button class="begin">开启定时器</button>
     <button class="stop">停止定时器</button>
+    <button class="local">点击</button>
+    <div class="box"></div>
+
+    <form action="index_tail.html">
+        用户名: <input type="text" name="uname">
+        <input type="submit" value="登录">
+    </form>
     <script>
         var hour = document.querySelector('.hour');
         var minute = document.querySelector('.minute');
@@ -90,6 +97,38 @@
                 }
             }, 1000);
         })
+
+        // 执行顺序为 1 2 3 
+        // 同步任务和异步任务
+        // 同步任务都在主线程上执行 形成一个执行栈，异步任务是通过回调函数实现的，普通事件(click、resize)、资源加载(load、error)、定时器(setInterval、setTimeout)
+        // 异步任务相关回调函数添加到消息队列中
+        // 事件轮询: 主线程不断地从消息队列中获取任务、执行任务、获取任务、执行任务
+        // window对象的location属性 用于获取或者设置窗体的URL, 用于解析URL
+        console.log(1);
+        setTimeout(function () {
+            console.log(3);
+        }, 0);
+        console.log(2);
+
+
+        var button = document.querySelector('.local');
+        var box = document.querySelector('.box');
+
+        button.addEventListener('click', function () {
+            location.href = 'http://www.alibaba.com';
+        })
+
+        // var timer = 3;
+        // setInterval(function () {
+        //     if (timer == 0) {
+        //         location.href = 'http://www.alibaba.com';
+        //         clearInterval(timer);
+        //     } else {
+        //         box.innerHTML = '您将在' + timer + '秒之后跳转到首页';
+        //         timer--;
+        //     }
+        // })
+
     </script>
 </body>
 
