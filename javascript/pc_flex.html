@@ -34,7 +34,8 @@
             border: 15px solid red;
         }
 
-        span {
+        span,
+        .cli {
             position: absolute;
             left: 0;
             top: 200px;
@@ -50,6 +51,13 @@
             background-color: skyblue;
             padding: 10px;
         }
+
+        .boxes {
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;
+            margin: 200px;
+        }
     </style>
 </head>
 
@@ -62,6 +70,10 @@
     <button>点击box然后move</button>
     <span>box</span>
     <div class="box" style="width: 200px;"></div>
+
+    <button class="btn500">点击加速到500</button>
+    <button class="btn800">点击加速到800</button>
+    <span class="cli">吴沁倬</span>
 
 
 
@@ -116,6 +128,39 @@
 
         // 只包含width
         box.style.width = '300px';
+
+
+
+        function animate2(obj, target) {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () {
+                var step = (target - obj.offsetLeft) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.timer);
+                }
+                obj.style.left = obj.offsetLeft + step + 'px';
+            }, 15);
+        }
+
+        var cli = document.querySelector('.cli');
+        var btn500 = document.querySelector('.btn500');
+        var btn800 = document.querySelector('.btn800');
+        btn500.addEventListener('click', function () {
+            animate2(cli, 500);
+        })
+
+        btn800.addEventListener('click', function () {
+            animate2(cli, 800);
+        })
+
+
+        var boxes = document.querySelector('.boxes');
+        boxes.addEventListener('mousemove', function (e) {
+            var x = e.pageX - this.offsetLeft;
+            var y = e.pageY - this.offsetTop;
+            this.innerHTML = 'x坐标是' + x + ' y坐标是' + y;
+        })
 
     </script>
 </body>
