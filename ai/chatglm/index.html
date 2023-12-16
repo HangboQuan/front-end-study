@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT Interaction</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #chat-container {
+            max-width: 600px;
+            width: 100%;
+            margin: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .message {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            overflow-wrap: break-word;
+            font-size: 16px;
+        }
+
+        .user-message {
+            background-color: #e6f7ff;
+            text-align: right;
+        }
+
+        .bot-message {
+            background-color: #d9f0ff;
+            text-align: left;
+        }
+
+        #input-container {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            padding: 10px;
+            border-top: 1px solid #eee;
+        }
+
+        #user-input {
+            width: 80%;
+            padding: 8px;
+            margin-right: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        #send-button {
+            padding: 8px;
+            border: none;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="chat-container">
+        <div class="message bot-message">Hello! How can I help you today?</div>
+    </div>
+
+    <div id="input-container">
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button id="send-button" onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        const chatContainer = document.getElementById('chat-container');
+        const userInput = document.getElementById('user-input');
+        let eventSource = null;
+        let isConnected = false;
+
+        function appendMessage(sender, content, className) {
+            const message = document.createElement('div');
+            message.className = `message ${className}`;
+            message.innerHTML = `<strong>${sender}:</strong> ${content}`;
+            chatContainer.appendChild(message);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        function handleSpecialEvent(content) {
+            // 处理特殊事件，例如 event:add
+            const parts = content.split(' ');
+            if (parts[0] === 'event:add') {
+                appendMessage('ChatGPT', parts.slice(1).join(' '), 'bot-message');
+            }
+        }
+
+        function handleEventStreamData(data) {
+            const lines = data.split('\n');
+            let currentEvent = '';
+            let currentMessage = '';
+
+            for (const line of lines) {
+                if (line.startsWith('data: ')) {
+                    const message = line.substring('data: '.length).trim();
+
+                    if (currentEvent === 'event:add') {
+                        currentMessage += message + ' ';
+                        handleSpecialEvent(currentMessage);
+                    }
+                } else if (line.startsWith('event: ')) {
+                    currentEvent = line.substring('event: '.length).trim();
+                } else if (line === '') {
+                    // Empty line indicates the end of an event
+                    if (currentEvent === 'event:add') {
+                        appendMessage('ChatGPT', currentMessage.trim(), 'bot-message');
+                    }
+
+                    // Reset for the next event
+                    currentEvent = '';
+                    currentMessage = '';
+                }
+            }
+        }
+
+        function openSSEConnection(query) {
+            if (!isConnected) {
+                eventSource = new EventSource(`http://localhost:9090/api/model?query=${query}`);
+
+                eventSource.onmessage = function (event) {
+                    const eventData = event.data;
+                    handleEventStreamData(eventData);
+                };
+
+                eventSource.onclose = function () {
+                    console.log("SSE connection closed");
+                    isConnected = false;
+                };
+
+                isConnected = true;
+            }
+        }
+
+        function closeSSEConnection() {
+            if (eventSource) {
+                eventSource.close();
+                isConnected = false;
+            }
+        }
+
+        function sendMessage() {
+            const userMessage = userInput.value.trim();
+
+            if (userMessage === '') return;
+
+            appendMessage('You', userMessage, 'user-message');
+
+            // Close existing SSE connection before opening a new one
+            closeSSEConnection();
+
+            // Open a new SSE connection with the current user input
+            openSSEConnection(userMessage);
+
+            userInput.value = ''; // Clear the input field
+        }
+
+        document.getElementById('user-input').addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+
+</html>
