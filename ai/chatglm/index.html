@@ -150,6 +150,19 @@
                     isConnected = false;
                 };
 
+                eventSource.onerror = function (event) {
+                    console.error("SSE error:", event);
+                    console.log("Ready State:", eventSource.readyState);
+                    if (eventSource.readyState === EventSource.CLOSED) {
+                        console.log("SSE connection is closed");
+                    } else {
+                        console.log("SSE connection is still open");
+                    }
+
+                    eventSource.close();
+                    console.log("error");
+                }
+
                 isConnected = true;
             }
         }
@@ -172,7 +185,19 @@
             closeSSEConnection();
 
             // Open a new SSE connection with the current user input
-            openSSEConnection(userMessage);
+            if (!isConnected) {
+                console.log("init build...");
+                eventSource = new EventSource(`http://localhost:9090/api/model?query=你是谁`);
+                eventSource.onmessage = function (event) {
+                    const eventData = event.data;
+                    handleEventStreamData(eventData);
+                };
+
+                eventSource.onclose = function () {
+                    console.log("SSE connection closed");
+                    isConnected = false;
+                };
+            }
 
             userInput.value = ''; // Clear the input field
         }
