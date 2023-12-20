@@ -94,8 +94,7 @@
 </head>
 
 <body>
-    <div id="chat-container">
-    </div>
+    <div id="chat-container"></div>
 
     <div id="input-container">
         <input type="text" id="user-input" placeholder="Type your message...">
@@ -107,8 +106,9 @@
         const userInput = document.getElementById('user-input');
         let eventSource = null;
         let messageQueue = [];
+        let isProcessingQueue = false;
 
-        async function appendMessage(sender, content, className) {
+        function appendMessage(sender, content, className) {
             const message = document.createElement('div');
             message.className = `message ${className}`;
             message.innerHTML = `<strong>${sender}:</strong> ${content}`;
@@ -117,31 +117,35 @@
         }
 
         async function typeMessage(message, sender, className) {
-            const delay = 50; 
+            const delay = 50;
             for (const char of message) {
                 await new Promise(resolve => setTimeout(resolve, delay));
                 const lastMessage = chatContainer.lastChild;
                 if (lastMessage && lastMessage.className.includes(className)) {
                     lastMessage.lastChild.textContent += char;
                 } else {
-                    await appendMessage(sender, char, className);
+                    appendMessage(sender, char, className);
                 }
             }
         }
 
         async function handleEventStreamData(event) {
-            let data = event.data;
-            console.log(data);
-            if (event.type === "message") {
-                let lines = data.split("\n");
-                messageQueue.push({ sender: 'ChatBot', content: lines[1], className: 'bot-message' });
-            } else if (event.type === "add") {
-                messageQueue.push({ sender: 'ChatBot', content: data, className: 'bot-message' });
-            } else if (event.type === "finish") {
-                while (messageQueue.length > 0) {
-                    const message = messageQueue.shift();
-                    await typeMessage(message.content, message.sender, message.className);
-                }
+            let data = JSON.parse(event.data);
+
+            if (data.choices && data.choices.length > 0) {
+                let botMessage = data.choices[0].messages[0].text;
+                messageQueue.push({ sender: 'MiniMax', content: botMessage, className: 'bot-message' });
+                processMessageQueue();
+            }
+        }
+
+        async function processMessageQueue() {
+            if (!isProcessingQueue && messageQueue.length > 0) {
+                isProcessingQueue = true;
+                const { sender, content, className } = messageQueue.shift();
+                await typeMessage(content, sender, className);
+                isProcessingQueue = false;
+                processMessageQueue();
             }
         }
 
@@ -150,14 +154,8 @@
             if (userMessage === '') return;
             appendMessage('You', userMessage, 'user-message');
             if (!eventSource || eventSource.readyState === EventSource.CLOSED) {
-                eventSource = new EventSource(`http://localhost:9090/api/model/chatglm?query=${userMessage}`, { withCredentials: true });
+                eventSource = new EventSource(`http://localhost:9090/api/model/minimax?query=${userMessage}`, { withCredentials: true });
                 eventSource.addEventListener('message', function (event) {
-                    handleEventStreamData(event);
-                });
-                eventSource.addEventListener('add', function (event) {
-                    handleEventStreamData(event);
-                });
-                eventSource.addEventListener('finish', function (event) {
                     handleEventStreamData(event);
                 });
                 eventSource.onclose = function (event) {
@@ -167,7 +165,7 @@
                     eventSource.close();
                 }
             }
-            userInput.value = ''; 
+            userInput.value = '';
         }
 
         document.getElementById('user-input').addEventListener('keydown', async function (event) {
@@ -177,4 +175,5 @@
         });
     </script>
 </body>
+
 </html>
